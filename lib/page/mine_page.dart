@@ -3,11 +3,9 @@ import 'package:p_project/app_localization_container.dart';
 import 'package:p_project/app_state_container.dart';
 import 'package:p_project/common/c.dart';
 import 'package:p_project/common/common_utils.dart';
-import 'package:p_project/page/mine_page.dart';
-import 'package:p_project/router/router.dart';
 
-class HomePage extends StatelessWidget {
-  static var routeName = '/';
+class MinePage extends StatelessWidget {
+  static var routeName = '/mine';
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +31,10 @@ class HomePage extends StatelessWidget {
 
             RaisedButton(
               onPressed: () {
-                RouterUtils.pushNamed(context, MinePage.routeName);
-//                Navigator.push(context, route)
+//                AppStateContainer.of(context).state.user.userName = 'new name';
+                AppStateContainer.of(context).updateName('new name');
               },
-              child: Text('Jump to mine'),
+              child: Text('change launge - en'),
             ),
             Text(AppStateContainer.of(context).state.user.userName),
           ],

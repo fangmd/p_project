@@ -7,6 +7,7 @@ import 'package:p_project/common/common_utils.dart';
 import 'package:p_project/common/localization/my_localizations_delegate.dart';
 import 'package:p_project/page/home_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:p_project/router/router.dart';
 
 class AppRootWidget extends StatefulWidget {
   @override
@@ -40,9 +41,7 @@ class AppRootWidgetState extends State<AppRootWidget> {
         const Locale('zh', 'Chinese'), // Hebrew
       ],
       locale: Locale(locale),
-      routes: {
-        '/': (_) => HomePage(),
-      },
+      routes: buildRoutes2(),
     );
   }
 
