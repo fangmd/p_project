@@ -36,7 +36,7 @@ class _AppStateContainerState extends State<AppStateContainer> {
     if (widget.state != null) {
       state = widget.state;
     } else {
-      state = new AppState.loading();
+      state = AppState.init();
       initUser();
     }
   }
