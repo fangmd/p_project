@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/app_state_container.dart';
 
-class HomePage extends StatelessWidget {
+class UserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appStateContainer = AppStateContainer.of(context);
@@ -24,9 +24,9 @@ class HomePage extends StatelessWidget {
             ),
             RaisedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/user');
+                Navigator.pushNamed(context, '/');
               },
-              child: Text('To user page'),
+              child: Text('To home page'),
             ),
             Text(appStateContainer.state.user.userName),
           ],

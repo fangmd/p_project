@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/page/home_page.dart';
+import 'package:p_project/page/user_page.dart';
 
 class AppRootWidget extends StatefulWidget {
   @override
@@ -21,6 +22,7 @@ class AppRootWidgetState extends State<AppRootWidget> {
       theme: _themeData,
       routes: {
         '/': (_) => HomePage(),
+        '/user': (_) => UserPage(),
       },
     );
   }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:p_project/models/user_model.dart';
 
 import 'models/app_state.dart';
 
@@ -37,6 +38,9 @@ class _AppStateContainerState extends State<AppStateContainer> {
       state = widget.state;
     } else {
       state = new AppState.loading();
+      // monkey user
+      state.user = UserModel('init');
+      //
       initUser();
     }
   }
@@ -78,6 +82,11 @@ class _AppStateContainerState extends State<AppStateContainer> {
 //    }
   }
 
+  void updateUserName(String userName) {
+    setState(() {
+      state.user.userName = userName;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
