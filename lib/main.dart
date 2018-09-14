@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/app.dart';
-import 'package:p_project/app_state_container.dart';
+import 'package:p_project/app_setup_container.dart';
 
-void main() => runApp(AppStateContainer(
+void main() => runApp(AppSetUpContainer(
       child: AppRootWidget(),
     ));

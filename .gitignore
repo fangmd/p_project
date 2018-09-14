@@ -7,3 +7,10 @@
 build/
 
 .flutter-plugins
+
+.atom/
+.idea
+.vscode/
+ios/.generated/
+packages
+.idea/
