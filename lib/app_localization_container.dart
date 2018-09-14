@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/common/c.dart';
-import 'package:p_project/common/localization/my_localizations_delegate.dart';
 
 class AppLocalizationContainer extends StatefulWidget {
   final Widget child;
@@ -20,19 +19,18 @@ class AppLocalizationContainer extends StatefulWidget {
 }
 
 class _AppLocalizationContainerState extends State<AppLocalizationContainer> {
-
   String locale = ZH;
 
   @override
   Widget build(BuildContext context) {
     return _AppLocalizationInheritedWidget(
-      child: widget.child,
       data: this,
+      child: widget.child,
     );
   }
 
-  void setLocal(String local) {
-    print('change launguage $local');
+  void setLocal(String locale) {
+    print('change launguage $locale');
     setState(() {
       this.locale = locale;
     });

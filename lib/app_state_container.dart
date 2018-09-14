@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:p_project/models/user_model.dart';
 
 import 'models/app_state.dart';
 
@@ -14,9 +15,6 @@ class AppStateContainer extends StatefulWidget {
     this.state,
   });
 
-  // This creates a method on the AppState that's just like 'of'
-  // On MediaQueries, Theme, etc
-  // This is the secret to accessing your AppState all over your app
   static _AppStateContainerState of(BuildContext context) {
     return (context.inheritFromWidgetOfExactType(_InheritedStateContainer)
             as _InheritedStateContainer)
@@ -37,6 +35,9 @@ class _AppStateContainerState extends State<AppStateContainer> {
       state = widget.state;
     } else {
       state = AppState.init();
+      //monkey
+      state.user = UserModel('init name');
+      //
       initUser();
     }
   }
@@ -85,6 +86,12 @@ class _AppStateContainerState extends State<AppStateContainer> {
       data: this,
       child: widget.child,
     );
+  }
+
+  void updateName(String s) {
+    setState(() {
+      state.user.userName = s;
+    });
   }
 }
 

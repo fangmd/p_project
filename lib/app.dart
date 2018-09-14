@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:p_project/app_localization_container.dart';
 import 'package:p_project/common/c.dart';
@@ -7,26 +9,23 @@ import 'package:p_project/page/home_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class AppRootWidget extends StatefulWidget {
-  final String locale;
-
   @override
-  AppRootWidgetState createState() => new AppRootWidgetState(locale);
+  AppRootWidgetState createState() => new AppRootWidgetState();
 
-  AppRootWidget({this.locale});
+  AppRootWidget();
 }
 
 class AppRootWidgetState extends State<AppRootWidget> {
-  String locale;
-
   ThemeData get _themeData => new ThemeData(
         primaryColor: Colors.cyan,
         accentColor: Colors.indigo,
         scaffoldBackgroundColor: Colors.grey[300],
       );
 
+
   @override
   Widget build(BuildContext context) {
-    locale = AppLocalizationContainer.of(context).locale;
+    var locale = AppLocalizationContainer.of(context).locale;
     return new MaterialApp(
       title: 'Inherited',
       debugShowCheckedModeBanner: false,
@@ -47,5 +46,8 @@ class AppRootWidgetState extends State<AppRootWidget> {
     );
   }
 
-  AppRootWidgetState(this.locale);
+  @override
+  void initState() {
+    super.initState();
+  }
 }
