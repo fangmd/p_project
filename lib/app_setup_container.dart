@@ -12,11 +12,6 @@ class AppSetUpContainer extends StatelessWidget {
         child: child,
       ),
     );
-
-
-//    return AppStateContainer(
-//      child: child,
-//    );
   }
 
   AppSetUpContainer({@required this.child});
