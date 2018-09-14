@@ -7,6 +7,10 @@ import 'package:p_project/common/common_utils.dart';
 class MinePage extends StatelessWidget {
   static var routeName = '/mine';
 
+  final String userName;
+
+  MinePage({this.userName}) : assert(userName != null);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,28 +19,12 @@ class MinePage extends StatelessWidget {
           children: <Widget>[
             RaisedButton(
               onPressed: () {
-                AppLocalizationContainer.of(context).setLocal(ZH);
-              },
-              child: Text('change launge - zh'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                AppLocalizationContainer.of(context).setLocal(EN);
-              },
-              child: Text('change launge - en'),
-            ),
-            Text(CommonUtils.getLocale(context).welcomeMessage),
-            Text(AppLocalizationContainer.of(context).locale),
-
-
-            RaisedButton(
-              onPressed: () {
 //                AppStateContainer.of(context).state.user.userName = 'new name';
                 AppStateContainer.of(context).updateName('new name');
               },
               child: Text('change launge - en'),
             ),
-            Text(AppStateContainer.of(context).state.user.userName),
+            Text(userName ?? 'default'),
           ],
         ),
       ),

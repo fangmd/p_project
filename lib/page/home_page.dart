@@ -29,12 +29,14 @@ class HomePage extends StatelessWidget {
             ),
             Text(CommonUtils.getLocale(context).welcomeMessage),
             Text(AppLocalizationContainer.of(context).locale),
-
-
             RaisedButton(
               onPressed: () {
                 RouterUtils.pushNamed(context, MinePage.routeName);
-//                Navigator.push(context, route)
+//                RouterUtils.push(
+//                    context,
+//                    MinePage(
+//                      userName: 'Fangmingdong',
+//                    ));
               },
               child: Text('Jump to mine'),
             ),
