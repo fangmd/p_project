@@ -12,4 +12,9 @@ class MyStyleUtils {
     color: Colors.lightGreen,
     fontSize: normalTextSize,
   );
+
+  static const bigText = TextStyle(
+    color: Colors.black,
+    fontSize: lagerTextSize,
+  );
 }

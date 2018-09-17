@@ -4,6 +4,7 @@ import 'package:p_project/app_state_container.dart';
 import 'package:p_project/common/c.dart';
 import 'package:p_project/common/common_utils.dart';
 import 'package:p_project/page/mine_page.dart';
+import 'package:p_project/page/sliver_one_page.dart';
 import 'package:p_project/router/router.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,33 +13,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("title"),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
             RaisedButton(
               onPressed: () {
-                AppLocalizationContainer.of(context).setLocal(ZH);
+                RouterUtils.pushNamed(context, SliverOnePage.routeName);
               },
-              child: Text('change launge - zh'),
+              child: Text('Jump to Sliver one'),
             ),
-            RaisedButton(
-              onPressed: () {
-                AppLocalizationContainer.of(context).setLocal(EN);
-              },
-              child: Text('change launge - en'),
-            ),
-            Text(CommonUtils.getLocale(context).welcomeMessage),
-            Text(AppLocalizationContainer.of(context).locale),
             RaisedButton(
               onPressed: () {
                 RouterUtils.pushNamed(context, MinePage.routeName);
-//                RouterUtils.push(
-//                    context,
-//                    MinePage(
-//                      userName: 'Fangmingdong',
-//                    ));
               },
-              child: Text('Jump to mine'),
+              child: Text('Jump to Sliver Two'),
             ),
             Text(AppStateContainer.of(context).state.user.userName),
           ],
