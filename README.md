@@ -10,3 +10,4 @@
 2. 支持国际化（多语言）
 3. `shared_preferences` 存储 key-value 数据
 4. 路由管理
+5. 封装控件：CircleImage
