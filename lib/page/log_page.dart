@@ -3,6 +3,7 @@ import 'package:p_project/app_localization_container.dart';
 import 'package:p_project/app_state_container.dart';
 import 'package:p_project/common/c.dart';
 import 'package:p_project/common/common_utils.dart';
+import 'package:p_project/common/net/api/user_api.dart';
 import 'package:p_project/common/utils/log.dart';
 import 'package:p_project/page/mine_page.dart';
 import 'package:p_project/router/router.dart';
@@ -25,6 +26,8 @@ class LogPage extends StatelessWidget {
             RaisedButton(
               onPressed: () {
                 Log.e(message: 'message debug');
+
+                UserApi.getUserInfo('12');
               },
               child: Text('log e'),
             ),
