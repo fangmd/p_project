@@ -42,6 +42,7 @@ flutter:
   assets:
     - statis/imgs/tab_home_ic.png
     - statis/imgs/tab_home_selected_ic.png
+    - statis/imgs/avatar.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
