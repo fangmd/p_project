@@ -5,6 +5,7 @@ import 'package:p_project/common/c.dart';
 import 'package:p_project/common/common_utils.dart';
 import 'package:p_project/page/mine_page.dart';
 import 'package:p_project/router/router.dart';
+import 'package:p_project/style/my_style.dart';
 
 class HomePage extends StatelessWidget {
   static var routeName = '/';
@@ -38,7 +39,10 @@ class HomePage extends StatelessWidget {
 //                      userName: 'Fangmingdong',
 //                    ));
               },
-              child: Text('Jump to mine'),
+              child: Text(
+                'Jump to mine',
+                style: MyStyleUtils.normalSubText,
+              ),
             ),
             Text(AppStateContainer.of(context).state.user.userName),
           ],
