@@ -50,6 +50,35 @@ class _HomePageState extends State<HomePage> {
                 size: 40.0,
                 imageProvider: AssetImage(CommonUtils.getAssets('avatar')),
               ),
+              SizedBox(
+                height: 80.0,
+                child: PageView(
+                  children: <Widget>[
+                    Center(
+                      child: CircleImage(
+                        size: 40.0,
+                        imageProvider:
+                            AssetImage(CommonUtils.getAssets('avatar')),
+                      ),
+                    ),
+                    Text('aaaaaaaa'),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 80.0,
+                child: PageView.builder(
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return Center(
+                      child: CircleImage(
+                        size: 40.0,
+                        imageProvider: AssetImage(CommonUtils.getAssets('avatar')),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),
