@@ -79,6 +79,16 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
+              RichText(
+                text: TextSpan(
+                  text: 'Hello ',
+                  style: Theme.of(context).textTheme.title,
+                  children: <TextSpan>[
+                    TextSpan(text: 'bold', style: new TextStyle(fontWeight: FontWeight.bold)),
+                    TextSpan(text: ' world!'),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
