@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:p_project/common/c.dart';
 import 'package:p_project/common/common_utils.dart';
 import 'package:p_project/common/net/api/api_c.dart';
 import 'package:p_project/common/net/base_response.dart';
@@ -9,9 +8,6 @@ import 'package:p_project/common/utils/log.dart';
 class HttpManager {
   static const CONTENT_TYPE_JSON = "application/json";
   static const CONTENT_TYPE_FORM = "application/x-www-form-urlencoded";
-  static Map<String, String> commonHeader = {
-    "clienttype": 'ANDROID',
-  };
 
   /// 获取请求配置
   static Options getCommonOptions(Map<String, String> header) {
@@ -20,8 +16,10 @@ class HttpManager {
       connectTimeout: 15000,
       baseUrl: BASE_URL,
     );
-//    options.headers.addAll(commonHeader);
-    if(header != null){
+    options.headers.addAll({
+      "clienttype": 'ANDROID',
+    });
+    if (header != null) {
       options.headers.addAll(header);
     }
 
@@ -43,7 +41,7 @@ class HttpManager {
     // header
     Options options = getCommonOptions(header);
 
-    Dio dio = new Dio();
+    Dio dio = Dio();
     Response response;
     try {
       response = await dio.request(url, data: params, options: options);
@@ -52,7 +50,7 @@ class HttpManager {
       if (e.response != null) {
         errorResponse = e.response;
       } else {
-        errorResponse = new Response(statusCode: 666);
+        errorResponse = Response(statusCode: 666);
       }
       if (e.type == DioErrorType.CONNECT_TIMEOUT) {
         errorResponse.statusCode = NETWORK_TIMEOUT;
@@ -71,18 +69,6 @@ class HttpManager {
             "response: ${response.toString()}");
 
     try {
-      if (options.contentType != null &&
-          options.contentType.primaryType == "text") {
-        return BaseResponse(data: response.data, code: SUCCESS);
-      } else {
-        /// save token
-//        var responseJson = response.data;
-//        if (response.statusCode == 201 && responseJson["token"] != null) {
-//          optionParams["authorizationCode"] = 'token ' + responseJson["token"];
-//          await LocalStorage.save(
-//              Config.TOKEN_KEY, optionParams["authorizationCode"]);
-//        }
-      }
       if (response.statusCode == 200 || response.statusCode == 201) {
         return BaseResponse(data: response.data, code: SUCCESS);
       }
