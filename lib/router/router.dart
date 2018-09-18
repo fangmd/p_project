@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:p_project/page/gesture_page.dart';
 import 'package:p_project/page/home_page.dart';
 import 'package:p_project/page/log_page.dart';
 import 'package:p_project/page/mine_page.dart';
 
 Map<String, WidgetBuilder> buildRoutes2() {
   return {
-    LogPage.routeName: (_) => LogPage(),
+//    LogPage.routeName: (_) => LogPage(),
     MinePage.routeName: (_) => MinePage(),
+    GesturePage.routeName: (_) => GesturePage(),
   };
 }
 

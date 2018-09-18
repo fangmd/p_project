@@ -41,6 +41,7 @@ class HomePage extends StatelessWidget {
               child: Text('Jump to mine'),
             ),
             Text(AppStateContainer.of(context).state.user.userName),
+
           ],
         ),
       ),
