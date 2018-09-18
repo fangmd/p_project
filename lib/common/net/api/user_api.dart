@@ -5,6 +5,6 @@ class UserApi {
     var url =
         'https://raw.githubusercontent.com/fangmd/markdownphoto/master/user#';
 
-    var result = await HttpManager.get(url, null, null);
+    var result = await HttpManager.get(url, {'userid': userId}, null);
   }
 }
