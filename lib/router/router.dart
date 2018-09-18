@@ -3,10 +3,12 @@ import 'package:p_project/page/home_page.dart';
 import 'package:p_project/page/log_page.dart';
 import 'package:p_project/page/list_view_pager.dart';
 import 'package:p_project/page/mine_page.dart';
+import 'package:p_project/page/smart_list_view_pager.dart';
 
 Map<String, WidgetBuilder> buildRoutes2() {
   return {
-    ListViewPage.routeName: (_) => ListViewPage(),
+//    ListViewPage.routeName: (_) => ListViewPage(),
+    SmartListViewPage.routeName: (_) => SmartListViewPage(),
     MinePage.routeName: (_) => MinePage(),
   };
 }

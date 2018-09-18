@@ -3,27 +3,20 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:p_project/common/utils/log.dart';
 
-class ListViewPage extends StatefulWidget {
+class SmartListViewPage extends StatefulWidget {
   static String routeName = '/';
 
   @override
   State<StatefulWidget> createState() {
-    return _ListViewPageState();
+    return _SmartListViewPageState();
   }
 }
 
-class _ListViewPageState extends State<ListViewPage> {
+class _SmartListViewPageState extends State<SmartListViewPage> {
   @override
   void initState() {
     initScrollController();
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    _scrollController.removeListener(_handleScroll);
-    _scrollController.dispose();
-    super.dispose();
   }
 
   @override
@@ -66,15 +59,13 @@ class _ListViewPageState extends State<ListViewPage> {
 
   ScrollController _scrollController = new ScrollController();
 
-  void _handleScroll() {
-    if (_scrollController.position.pixels ==
-        _scrollController.position.maxScrollExtent) {
-      _getMoreData();
-    }
-  }
-
   void initScrollController() {
-    _scrollController.addListener(_handleScroll);
+    _scrollController.addListener(() {
+      if (_scrollController.position.pixels ==
+          _scrollController.position.maxScrollExtent) {
+        _getMoreData();
+      }
+    });
   }
 
   void _getMoreData() {
