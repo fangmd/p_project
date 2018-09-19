@@ -36,7 +36,7 @@ class _AppStateContainerState extends State<AppStateContainer> {
     } else {
       state = AppState.init();
       //monkey
-      state.user = UserModel('init name');
+//      state.user = UserModel('init name');
       //
       initUser();
     }

@@ -9,7 +9,7 @@ import 'package:p_project/page/mine_page.dart';
 import 'package:p_project/router/router.dart';
 
 class LogPage extends StatelessWidget {
-  static var routeName = '/';
+  static var routeName = '/log';
 
   @override
   Widget build(BuildContext context) {

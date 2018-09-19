@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:p_project/common/common_utils.dart';
 import 'package:p_project/common/net/api/api_c.dart';
@@ -31,7 +33,7 @@ class HttpManager {
   ///[ params] 请求参数
   ///[ header] 外加头
   ///[ option] 配置
-  static get(url, params, Map<String, String> header) async {
+  static Future<BaseResponse> get(url, params, Map<String, String> header) async {
     // check net
     var netConnected = await CommonUtils.netConnected();
     if (!netConnected) {

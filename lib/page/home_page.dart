@@ -3,7 +3,9 @@ import 'package:p_project/app_localization_container.dart';
 import 'package:p_project/app_state_container.dart';
 import 'package:p_project/common/c.dart';
 import 'package:p_project/common/common_utils.dart';
+import 'package:p_project/page/log_page.dart';
 import 'package:p_project/page/mine_page.dart';
+import 'package:p_project/page/refresh_page.dart';
 import 'package:p_project/router/router.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,33 +16,21 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
               onPressed: () {
-                AppLocalizationContainer.of(context).setLocal(ZH);
+                RouterUtils.pushNamed(context, LogPage.routeName);
               },
-              child: Text('change launge - zh'),
+              child: Text('To LogPage'),
             ),
             RaisedButton(
               onPressed: () {
-                AppLocalizationContainer.of(context).setLocal(EN);
+                RouterUtils.pushNamed(context, RefreshPage.routeName);
               },
-              child: Text('change launge - en'),
+              child: Text('To RefreshPage Demo'),
             ),
-            Text(CommonUtils.getLocale(context).welcomeMessage),
-            Text(AppLocalizationContainer.of(context).locale),
-            RaisedButton(
-              onPressed: () {
-                RouterUtils.pushNamed(context, MinePage.routeName);
-//                RouterUtils.push(
-//                    context,
-//                    MinePage(
-//                      userName: 'Fangmingdong',
-//                    ));
-              },
-              child: Text('Jump to mine'),
-            ),
-            Text(AppStateContainer.of(context).state.user.userName),
           ],
         ),
       ),
