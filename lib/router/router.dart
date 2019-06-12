@@ -9,6 +9,7 @@ import 'package:p_project/page/transform_page.dart';
 
 Map<String, WidgetBuilder> buildRoutes2() {
   return {
+    '页面名称': (_) => LogPage(),
     LogPage.routeName: (_) => LogPage(),
     HomePage.routeName: (_) => HomePage(),
     MinePage.routeName: (_) => MinePage(),

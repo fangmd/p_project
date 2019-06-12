@@ -35,9 +35,6 @@ class _AppStateContainerState extends State<AppStateContainer> {
       state = widget.state;
     } else {
       state = AppState.init();
-      //monkey
-//      state.user = UserModel('init name');
-      //
       initUser();
     }
   }
@@ -56,27 +53,6 @@ class _AppStateContainerState extends State<AppStateContainer> {
   }
 
   logIntoFirebase() async {
-//    if (googleUser == null) {
-//      googleUser = await googleSignIn.signIn();
-//    }
-//
-//    FirebaseUser firebaseUser;
-//    FirebaseAuth _auth = FirebaseAuth.instance;
-//    try {
-//      GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-//      firebaseUser = await _auth.signInWithGoogle(
-//        accessToken: googleAuth.accessToken,
-//        idToken: googleAuth.idToken,
-//      );
-//      print('Logged in: ${firebaseUser.displayName}');
-//      setState(() {
-//        state.isLoading = false;
-//        state.user = firebaseUser;
-//      });
-//    } catch (error) {
-//      print(error);
-//      return null;
-//    }
   }
 
 
@@ -95,7 +71,7 @@ class _AppStateContainerState extends State<AppStateContainer> {
   }
 }
 
-class _InheritedStateContainer extends InheritedWidget {
+class _InheritedStateContainer extends InheritedWidget {// InheritedWidget, Theme
   final _AppStateContainerState data;
 
   _InheritedStateContainer({

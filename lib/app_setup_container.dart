@@ -7,8 +7,8 @@ class AppSetUpContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppLocalizationContainer(
-      child: AppStateContainer(
+    return AppLocalizationContainer(//国际化
+      child: AppStateContainer(// 全局变量，
         child: child,
       ),
     );
