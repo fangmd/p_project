@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:p_project/router/router.dart';
-import 'package:p_project/strings/localization/localizations_utils.dart';
 import 'package:p_project/styles/colors.dart';
-import 'package:p_project/ui/main_page.dart';
 import 'package:p_project/utils/screen_utils.dart';
 
 /// 空白自动展开控件
