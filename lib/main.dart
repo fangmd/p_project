@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
       context: context,
       child: MaterialApp(
         navigatorKey: RouterUtils.navigatorKey,
-        title: 'Torent',
+        title: 'P',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
