@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
+import 'package:p_project/ui/learns/guesture_page.dart';
 import 'package:p_project/ui/main_page.dart';
 import 'package:p_project/ui/splash/splash_page.dart';
 
@@ -6,6 +8,8 @@ Map<String, WidgetBuilder> buildRoutes() {
   return {
     MainPage.routeName: (_) => MainPage(),
     SplashPage.routeName: (_) => SplashPage(),
+    ImageViewerPage.routeName: (_) => ImageViewerPage(),
+    GuesturePage.routeName: (_) => GuesturePage(),
   };
 }
 
