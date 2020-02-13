@@ -13,7 +13,17 @@ A new Flutter project.
 8. 自定义底部导航栏
 9. 头部导航栏封装
 10. 全局 Loading 弹框
-11. 
+
+
+## 自定义插件
+
+### 参数插件(`params_plugin_page.dart`)
+
+1. flutter 调用 Native
+
+flutter 传递参数给 Native，Native 返回值
+
+
 
 
 ## Demos
