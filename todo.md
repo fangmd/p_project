@@ -9,3 +9,4 @@
 1. App Upgrade
 2. 文件管理(缓存LRU)
 3. umeng 统计 & firebase
+4. net mock

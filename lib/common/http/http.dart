@@ -4,7 +4,6 @@ import 'package:dio_flutter_transformer/dio_flutter_transformer.dart';
 import 'package:p_project/common/http/refresh_token_interceptor.dart';
 import 'package:p_project/utils/app_info.dart';
 import 'package:p_project/utils/common_function.dart';
-import 'package:p_project/utils/logger.dart';
 import '../../c.dart';
 import 'loading_interceptor.dart';
 
@@ -22,21 +21,22 @@ class Http {
   Http._internal();
 
   /// 普通请求
-  Dio _dio;
+  Map<String, Dio> _dioMap = {};
 
-  /// 带有 loading 弹框的请求
+  /// 带有 Loading 的请求
   Dio _loadingDio;
 
-  /// 带有默认错误提示的请求
+  /// 带有自动错误提示的请求
   Dio _errorDio;
 
   Map<String, String> headers = {};
 
   ///dio 配置
-  BaseOptions getCommonOptions(Map<String, dynamic> header) {
+  BaseOptions getCommonOptions(Map<String, dynamic> header,
+      {String url = C.BASE_URL}) {
     var options = BaseOptions(
       connectTimeout: 3000,
-      baseUrl: C.BASE_URL,
+      baseUrl: url,
       contentType: Headers.formUrlEncodedContentType,
     );
     options.headers.addAll(headers);
@@ -67,12 +67,14 @@ class Http {
     return _errorDio;
   }
 
-  Future<Dio> getDio({Map<String, String> header}) async {
-    if (_dio == null) {
+  Future<Dio> getDio(
+      {String url = C.BASE_URL, Map<String, String> header}) async {
+    Dio dio = _dioMap[url];
+    if (dio == null) {
       await initCommonHeader();
-      _dio = new Dio(getCommonOptions(header));
+      dio = new Dio(getCommonOptions(header, url: url));
       if (isDebug()) {
-        _dio.interceptors.add(LogInterceptor(
+        dio.interceptors.add(LogInterceptor(
           requestHeader: true,
           requestBody: true,
           responseHeader: false,
@@ -80,12 +82,13 @@ class Http {
         ));
       }
 
-      _dio.transformer = FlutterTransformer();
+      dio.transformer = FlutterTransformer();
 
-      _dio.interceptors.add(RefreshTokenInterceptor());
-      _dio.interceptors.add(ErrorToastInterceptor());
+      dio.interceptors.add(RefreshTokenInterceptor());
+      dio.interceptors.add(ErrorToastInterceptor());
+      _dioMap[url] = dio;
     }
-    return _dio;
+    return dio;
   }
 
   Future<Dio> getLoadingDio({Map<String, String> header}) async {
@@ -111,8 +114,23 @@ class Http {
 
   Future<Dio> getFileUploadDio() async {
     await initCommonHeader();
-
-    final options = getCommonOptions({});
+    String time = '${DateTime.now().millisecondsSinceEpoch}';
+    String lang = headers['Lang'];
+    String auth = headers['Authorization'];
+    List<String> list = [time, lang, auth, 'taurus future'];
+    list.sort();
+    String combian = '';
+    for (var i in list) {
+      combian = combian + i;
+    }
+    // String api = generateMd5(combian);
+    final options = getCommonOptions(
+      {
+        'Timestamp': time,
+        // 'Api': api,
+      },
+    );
+    // options.baseUrl = C.IMG_UPLOAD_BASE_URL;
     options.contentType = 'multipart/form-data';
     options.connectTimeout = 10000;
     final _fileDio = new Dio(options);
@@ -129,10 +147,9 @@ class Http {
     return _fileDio;
   }
 
-  Future updateHeader(String key, String value) async {
-    Logger.d(tag: Tag.HTTP, msg: 'update header key$key value:$value');
-    headers['key'] = value;
-    _dio = null;
+  void changeHeader(String key, String value) {
+    headers[key] = value;
+    _dioMap.clear();
     _loadingDio = null;
     _errorDio = null;
   }

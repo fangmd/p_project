@@ -17,6 +17,7 @@ abstract class BasePageState<T extends BasePage> extends State<BasePage>
   void initState() {
     NavigatorManger().addWidget(this);
     WidgetsBinding.instance.addObserver(this);
+    onResume();
     super.initState();
   }
 
@@ -25,10 +26,8 @@ abstract class BasePageState<T extends BasePage> extends State<BasePage>
     if (NavigatorManger().isSecondTop(this)) {
       if (!_onPause) {
         onPause();
-        _onPause = true;
       } else {
         onResume();
-        _onPause = false;
       }
     } else if (NavigatorManger().isTopPage(this)) {
       if (!_onPause) {
@@ -57,7 +56,7 @@ abstract class BasePageState<T extends BasePage> extends State<BasePage>
         onResume();
       }
     } else if (state == AppLifecycleState.paused) {
-      //onpause
+      //on pause
       if (NavigatorManger().isTopPage(this)) {
         onBackground();
         onPause();
@@ -67,18 +66,26 @@ abstract class BasePageState<T extends BasePage> extends State<BasePage>
   }
 
   void onForeground() {
-    Logger.d(msg: "onForeground");
+    _onResumed = true;
+    _onPause = false;
+    Logger.d(msg: "onForeground ${widget.getPageName()}");
   }
 
   void onResume() {
-    Logger.d(msg: "onResume");
+    _onResumed = true;
+    _onPause = false;
+    Logger.d(msg: "onResume ${widget.getPageName()}");
   }
 
   void onBackground() {
-    Logger.d(msg: "onBackground");
+    _onPause = true;
+    _onResumed = false;
+    Logger.d(msg: "onBackground ${widget.getPageName()}");
   }
 
   void onPause() {
-    Logger.d(msg: "onPause");
+    _onPause = true;
+    _onResumed = false;
+    Logger.d(msg: "onPause ${widget.getPageName()}");
   }
 }
