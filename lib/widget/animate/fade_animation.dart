@@ -90,6 +90,7 @@ class _FadeAnimationNoThirdState extends State<FadeAnimationNoThird>
 
   @override
   void initState() {
+    print('initState _FadeAnimationNoThirdState');
     _controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 500))
           ..addListener(() {
@@ -103,8 +104,6 @@ class _FadeAnimationNoThirdState extends State<FadeAnimationNoThird>
     translateYAnimation = Tween<Offset>(begin: Offset(0, -1), end: Offset(0, 0))
         .chain(CurveTween(curve: Curves.easeInOut))
         .animate(_controller);
-
-    _controller.forward();
 
     delay = Duration(milliseconds: (500 * widget.delay).round());
 
@@ -124,7 +123,15 @@ class _FadeAnimationNoThirdState extends State<FadeAnimationNoThird>
     if (_isDisposed || _waitForDelay) {
       return;
     }
+    print('forward _FadeAnimationNoThirdState');
     _controller.forward();
+  }
+
+  @override
+  void didUpdateWidget(FadeAnimationNoThird oldWidget) {
+    print('didUpdateWidget _FadeAnimationNoThirdState');
+    executeInstruction();
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
