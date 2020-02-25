@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
               msg: "locale:${locale?.languageCode} ${locale?.countryCode}");
           LocalizationsUtils.currentLocale =
               locale?.languageCode ?? LocalizationsUtils.EN;
-          Http.instance.updateHeader(
+          Http.instance.changeHeader(
               'Lang', converToHeaderLocale(LocalizationsUtils.currentLocale));
           return locale;
         },

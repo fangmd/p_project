@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/router/router.dart';
+import 'package:p_project/ui/home/page_animate/page_animate_page.dart';
 import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
 import 'package:p_project/ui/plugin/plugin_page.dart';
 
@@ -30,6 +31,12 @@ class _HomePageState extends State<HomePage> {
                   RouterUtils.pushNamed(context, PluginPage.routeName);
                 },
                 child: Text('插件Demo'),
+              ),
+              RaisedButton(
+                onPressed: () {
+                  RouterUtils.pushNamed(context, PageAnimatePage.routeName);
+                },
+                child: Text('页面跳转动画'),
               ),
             ],
           ),
