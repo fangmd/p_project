@@ -137,9 +137,13 @@ class MController {
     _s.add(startAnimation);
   }
 
-  void startAnimation() {
+  void startAnimation(Duration duration, VoidCallback callback) {
     _s.forEach((s) {
       s();
+    });
+
+    Future.delayed(duration, () {
+      callback();
     });
   }
 }
@@ -208,9 +212,8 @@ class _OnePageAnimatePageState extends State<OnePageAnimatePage> {
   }
 
   void _routeWithAnimation() {
-    _mController.startAnimation();
-    final animationTime = Duration(milliseconds: 500 + (500 * 1.1).round());
-    Future.delayed(animationTime, () {
+    _mController
+        .startAnimation(Duration(milliseconds: 500 + (500 * 1.1).round()), () {
       RouterUtils.pushNamed(context, ImageViewerPage.routeName);
     });
   }
