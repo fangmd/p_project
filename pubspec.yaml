@@ -46,6 +46,8 @@ dependencies:
 
   p_params:
     path: ../p_params
+  p_install:
+    path: ../flutterplugin/p_install
 
 dev_dependencies:
   flutter_localizations:

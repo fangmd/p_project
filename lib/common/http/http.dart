@@ -29,6 +29,8 @@ class Http {
   /// 带有自动错误提示的请求
   Dio _errorDio;
 
+  Dio _downloadDio;
+
   Map<String, String> headers = {};
 
   ///dio 配置
@@ -110,6 +112,22 @@ class Http {
       _loadingDio.interceptors.add(LoadingInterceptor());
     }
     return _loadingDio;
+  }
+
+  Future<Dio> getDownloadDio({Map<String, String> header}) async {
+    if (_downloadDio == null) {
+      await initCommonHeader();
+      _downloadDio = new Dio(getCommonOptions(header));
+      if (isDebug()) {
+        _downloadDio.interceptors.add(LogInterceptor(
+          requestHeader: true,
+          requestBody: true,
+          responseHeader: false,
+          responseBody: true,
+        ));
+      }
+    }
+    return _downloadDio;
   }
 
   Future<Dio> getFileUploadDio() async {

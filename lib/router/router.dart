@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:p_project/ui/home/apk_install/apk_install.dart';
+import 'package:p_project/ui/home/net/net_page.dart';
 import 'package:p_project/ui/home/page_animate/one/one_page_animate_page.dart';
 import 'package:p_project/ui/home/page_animate/page_animate_page.dart';
 import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
@@ -20,7 +22,9 @@ Map<String, WidgetBuilder> buildRoutes() {
     // animate
     PageAnimatePage.routeName: (_) => PageAnimatePage(),
     OnePageAnimatePage.routeName: (_) => OnePageAnimatePage(),
-    
+
+    ApkInstallPgae.routeName: (_) => ApkInstallPgae(),
+    NetPage.routeName: (_) => NetPage(),
   };
 }
 

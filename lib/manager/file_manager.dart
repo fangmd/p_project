@@ -3,7 +3,17 @@ import 'package:filesize/filesize.dart';
 import 'package:path_provider/path_provider.dart';
 
 class FileManager {
-  Future<String> getImgCachePath() async {
+  static Future<String> getImgCachePath() async {
+    Directory tempDir = await getTemporaryDirectory();
+    // String path = join(tempDir.path, 'imgCache');
+    // File cachedImgDir = File(path);
+    // if (!await cachedImgDir.exists()) {
+    //   await cachedImgDir.create(recursive: true);
+    // }
+    return tempDir.path;
+  }
+
+  static Future<String> getCachePath() async {
     Directory tempDir = await getTemporaryDirectory();
     // String path = join(tempDir.path, 'imgCache');
     // File cachedImgDir = File(path);

@@ -9,3 +9,8 @@ class ImageMock {
   static final smallImg =
       'https://pic4.zhimg.com/d2e6f8622282ca45d534cd5222f181ad_is.jpg';
 }
+
+class ApkUrlMock {
+  static const coolApk =
+      "http://dl-cdn.coolapkmarket.com/down/apk_upload/2020/0211/bbdb588f5a5e14adf28dd62f25266e56-0-o_1e0q4snue1gk3olq1vef17g17u46-uid-10002.apk?_upt=f268bc431582859794";
+}

@@ -110,7 +110,7 @@ class _CropImageRouteState extends State<CropImageRoute> {
         file: originalFile,
         area: crop.area,
       );
-      String imgCachedPath = await FileManager().getImgCachePath();
+      String imgCachedPath = await FileManager.getImgCachePath();
       Logger.d(tag: Tag.FILE, msg: 'imgcached path: $imgCachedPath');
       CompressObject compressObject = CompressObject(
         imageFile: cropedImg, //image
