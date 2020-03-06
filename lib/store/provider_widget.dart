@@ -8,11 +8,9 @@ class ProviderWidget<T extends ChangeNotifier> extends StatefulWidget {
 
   /// 实现进入页面马上使用 model 加载数据功能
   final Function(T) onModelReady;
-  final Widget child;
   final bool autoDispose;
 
   ProviderWidget({
-    this.child,
     this.builder,
     @required this.onModelReady,
     @required this.model,
@@ -33,17 +31,10 @@ class _ProviderWidgetState<T extends ChangeNotifier>
 
   @override
   Widget build(BuildContext context) {
-    if (widget.child != null) {
-      return ChangeNotifierProvider<T>.value(
-        value: widget.model,
-        child: widget.child,
-      );
-    } else {
-      return ChangeNotifierProvider<T>.value(
-        value: widget.model,
-        child: Consumer<T>(builder: widget.builder),
-      );
-    }
+    return ChangeNotifierProvider<T>.value(
+      value: widget.model,
+      child: Consumer<T>(builder: widget.builder),
+    );
   }
 
   @override

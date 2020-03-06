@@ -12,7 +12,11 @@ class MsgPage extends StatefulWidget {
   _MsgPageState createState() => _MsgPageState();
 }
 
-class _MsgPageState extends State<MsgPage> {
+class _MsgPageState extends State<MsgPage>
+    with AutomaticKeepAliveClientMixin<MsgPage> {
+  @override
+  bool get wantKeepAlive => true;
+
   List<String> _rights;
 
   @override
@@ -32,6 +36,7 @@ class _MsgPageState extends State<MsgPage> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: SafeArea(
           child: Column(
