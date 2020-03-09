@@ -48,10 +48,6 @@ class _MainPageState extends BasePageState<MainPage>
 
   @override
   Widget build(BuildContext context) {
-    var animation = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-      curve: Interval((1 / 20) * 1, 1.0, curve: Curves.fastOutSlowIn),
-    ));
-
     _buildItems(context);
     return ProviderWidget(
       model: _mainVm,

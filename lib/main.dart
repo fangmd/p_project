@@ -1,9 +1,8 @@
-import 'dart:isolate';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:p_project/router/router.dart';
+import 'package:p_project/router/router_config.dart';
 import 'package:p_project/store/app_store.dart';
 import 'package:p_project/store/model/user_model.dart';
 import 'package:p_project/strings/localization/app_localization_container.dart';
@@ -70,12 +69,12 @@ class _MyAppState extends State<MyApp> {
         locale: Locale(locale),
         localeResolutionCallback:
             (Locale locale, Iterable<Locale> supportedLocales) {
-          Logger.d(
-              msg: "locale:${locale?.languageCode} ${locale?.countryCode}");
-          LocalizationsUtils.currentLocale =
-              locale?.languageCode ?? LocalizationsUtils.EN;
-          Http.instance.changeHeader(
-              'Lang', converToHeaderLocale(LocalizationsUtils.currentLocale));
+          LocalizationsUtils.getAppLocale().then((value) {
+            Logger.d(msg: "$value");
+            LocalizationsUtils.currentLocale = value;
+            Http.instance.changeHeader(
+                'Lang', converToHeaderLocale(LocalizationsUtils.currentLocale));
+          });
           return locale;
         },
         home: Builder(
