@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:p_project/widget/popup_window.dart';
+import 'package:p_project/widget/dialog/global_loading.dart';
 
 /// 1. 网络请求添加 loading 动画
 class LoadingInterceptor extends InterceptorsWrapper {

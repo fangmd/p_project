@@ -7,6 +7,7 @@ import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
 import 'package:p_project/ui/learns/guesture_page.dart';
 import 'package:p_project/ui/main_page.dart';
 import 'package:p_project/ui/msg/douyin/douyin_page.dart';
+import 'package:p_project/ui/msg/global_loading/global_loading_page.dart';
 import 'package:p_project/ui/plugin/params/params_plugin_page.dart';
 import 'package:p_project/ui/plugin/plugin_page.dart';
 import 'package:p_project/ui/splash/splash_page.dart';
@@ -19,6 +20,7 @@ Map<String, WidgetBuilder> buildRoutes() {
     GuesturePage.routeName: (_) => GuesturePage(),
     PluginPage.routeName: (_) => PluginPage(),
     ParamsPluginPage.routeName: (_) => ParamsPluginPage(),
+    GlobalLoadingPage.routeName: (_) => GlobalLoadingPage(),
 
     // animate
     PageAnimatePage.routeName: (_) => PageAnimatePage(),
