@@ -18,7 +18,7 @@ class Tag {
   static const String IM = "IM";
   static const String CROP = "CROP";
   static const String FILE = "File";
-  static const ANALYTICS = "Analytics";
+  static const Analytics = "Analytics";
 }
 
 /// app 校验错误

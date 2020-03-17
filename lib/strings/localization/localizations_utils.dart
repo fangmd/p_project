@@ -98,16 +98,16 @@ class LocalizationsUtils {
 
   static String getLanguageIc(BuildContext context) {
     var str = MyLocalizations.of(context).locale.languageCode;
-    String ret = 'assets/images/home/england_ic.png';
+    String ret = 'assets/home/england_ic.png';
     switch (str) {
       case EN:
-        ret = 'assets/images/home/england_ic.png';
+        ret = 'assets/home/england_ic.png';
         break;
       case ZH:
-        ret = 'assets/images/home/china_ic.png';
+        ret = 'assets/home/china_ic.png';
         break;
       case VI:
-        ret = 'assets/images/home/vietnam_ic.png';
+        ret = 'assets/home/vietnam_ic.png';
         break;
     }
     return ret;

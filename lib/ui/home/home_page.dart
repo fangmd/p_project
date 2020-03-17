@@ -5,6 +5,7 @@ import 'package:p_project/ui/home/page_animate/page_animate_page.dart';
 import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
 import 'package:p_project/ui/plugin/plugin_page.dart';
 import 'apk_install/apk_install.dart';
+import 'list/list_refresh_page.dart';
 
 class HomePage extends StatefulWidget {
   static var routeName = '/home';
@@ -54,6 +55,12 @@ class _HomePageState extends State<HomePage>
                   RouterUtils.pushNamed(context, NetPage.routeName);
                 },
                 child: Text('网络库'),
+              ),
+              RaisedButton(
+                onPressed: () {
+                  RouterUtils.pushNamed(context, ListRefreshPage.routeName);
+                },
+                child: Text('下拉刷新'),
               ),
               TextField(),
             ],

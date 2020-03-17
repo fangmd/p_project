@@ -83,20 +83,20 @@ class _MainPageState extends BasePageState<MainPage>
     _items = <Item>[
       Item(
         title: 'Home',
-        imgDefaultLocalPath: "assets/images/main/home_default.png",
-        imgSelectedLocalPath: "assets/images/main/home_selected.png",
+        imgDefaultLocalPath: "assets/main/home_default.png",
+        imgSelectedLocalPath: "assets/main/home_selected.png",
         selected: _tabIndex == 0,
       ),
       Item(
         title: 'Msg',
-        imgDefaultLocalPath: "assets/images/main/msg_default.png",
-        imgSelectedLocalPath: "assets/images/main/msg_selected.png",
+        imgDefaultLocalPath: "assets/main/msg_default.png",
+        imgSelectedLocalPath: "assets/main/msg_selected.png",
         selected: _tabIndex == 1,
       ),
       Item(
         title: 'Mine',
-        imgDefaultLocalPath: "assets/images/main/mine_default.png",
-        imgSelectedLocalPath: "assets/images/main/mine_selected.png",
+        imgDefaultLocalPath: "assets/main/mine_default.png",
+        imgSelectedLocalPath: "assets/main/mine_selected.png",
         selected: _tabIndex == 2,
       )
     ];

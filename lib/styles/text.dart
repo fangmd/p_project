@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/utils/screen_utils.dart';
+import 'package:p_project/utils/extentions/common_extentions.dart';
 import 'colors.dart';
 
 class AppTheme {
@@ -10,6 +11,12 @@ class AppTheme {
   static TextStyle adHomeTabSelected = TextStyle(
     color: home_tab_selected,
     fontSize: px2sp(20),
+  );
+
+  static TextStyle black34Bold = TextStyle(
+    color: MColor.black33,
+    fontSize: 34.sp(),
+    fontWeight: FontWeight.bold,
   );
 
   static TextStyle adBack40Bold = TextStyle(

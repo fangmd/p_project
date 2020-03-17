@@ -27,7 +27,7 @@ class TopNav extends StatelessWidget {
   Widget build(BuildContext context) {
     if (backImg == null) {
       this.backImg = Image.asset(
-        'assets/images/common/nav_back_ic.png',
+        'assets/common/nav_back_ic.png',
         width: px2dp(18),
         height: px2dp(34),
       );

@@ -21,7 +21,11 @@ import 'package:flutter/material.dart';
 ///   },
 /// );
 /// ```
+///
 class WheelWidget extends StatefulWidget {
+  /// 能显示的数量
+  final int viewCnt;
+
   /// 选中状态 Text 样式
   final TextStyle selectedTextStyle;
 
@@ -56,6 +60,7 @@ class WheelWidget extends StatefulWidget {
   final int initSecIndex;
 
   WheelWidget({
+    this.viewCnt = 5,
     this.selectedTextStyle = const TextStyle(fontSize: 20, color: Colors.black),
     this.unSelectedTextStyle =
         const TextStyle(fontSize: 18, color: Colors.grey),
@@ -104,6 +109,7 @@ class _WheelWidgetState extends State<WheelWidget> {
 
   @override
   void initState() {
+    viewportFraction = 1 / widget.viewCnt;
     pageController = PageController(
         viewportFraction: viewportFraction, initialPage: widget.initIndex);
     _selectedIndex = widget.initIndex;
@@ -115,7 +121,7 @@ class _WheelWidgetState extends State<WheelWidget> {
       secPageController = PageController(
           viewportFraction: viewportFraction, initialPage: widget.initSecIndex);
       _secSelectedIndex = widget.initSecIndex;
-      if (widget.onSelected != null) {
+      if (widget.onSecSelected != null) {
         widget.onSecSelected(_secSelectedIndex);
       }
     }
@@ -123,8 +129,18 @@ class _WheelWidgetState extends State<WheelWidget> {
     Future.delayed(Duration.zero, () {
       RenderBox rb = _keyStack.currentContext.findRenderObject();
       _widgetHeight = rb.size.height;
+      setState(() {});
     });
     super.initState();
+  }
+
+  @override
+  void didUpdateWidget(WheelWidget oldWidget) {
+    if (widget.initIndex != oldWidget.initIndex) {
+      pageController.jumpToPage(widget.initIndex);
+      _selectedIndex = widget.initIndex;
+    }
+    super.didUpdateWidget(oldWidget);
   }
 
   @override

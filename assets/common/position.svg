@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>位置@3x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="消息" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="信息icon" transform="translate(-293.000000, -184.000000)">
+            <g id="位置" transform="translate(293.000000, 184.000000)">
+                <rect id="矩形复制-7" fill="#94E9DA" x="0" y="0" width="32" height="32" rx="16"></rect>
+                <path d="M16,26 C21.3333333,20.9455187 24,16.9455187 24,14 C24,9.581722 20.418278,6 16,6 C11.581722,6 8,9.581722 8,14 C8,16.9455187 10.6666667,20.9455187 16,26 Z" id="椭圆形" stroke="#FFFFFF" stroke-width="2"></path>
+                <circle id="椭圆形" stroke="#FFFFFF" stroke-width="2" cx="16" cy="14" r="3"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

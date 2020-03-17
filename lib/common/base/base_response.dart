@@ -3,7 +3,7 @@ class BaseResponse {
   String msg;
   int timestamp;
 
-  BaseResponse({this.code, this.msg, this.timestamp});
+  BaseResponse(this.code, this.msg, this.timestamp);
 
   BaseResponse.fromJson(Map<String, dynamic> json) {
     code = json['code'];
