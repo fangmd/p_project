@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:p_project/utils/logger.dart';
 import 'navigator_manager.dart';
 
 abstract class BasePage extends StatefulWidget {
@@ -56,12 +55,12 @@ abstract class BasePageState<T extends BasePage> extends State<BasePage> {
   void onResume() {
     _onResumed = true;
     _onPause = false;
-    Logger.d(msg: "onResume ${widget.getPageName()}");
+    // Logger.d(msg: "onResume ${widget.getPageName()}");
   }
 
   void onPause() {
     _onPause = true;
     _onResumed = false;
-    Logger.d(msg: "onPause ${widget.getPageName()}");
+    // Logger.d(msg: "onPause ${widget.getPageName()}");
   }
 }
