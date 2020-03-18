@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/common/base/base_page.dart';
-import 'package:p_project/utils/extentions/common_extentions.dart';
 
 class DouYinPage extends BasePage {
   static const routeName = 'douyin';

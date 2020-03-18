@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/common/base/base_page.dart';
-import 'package:p_project/utils/hive_utils.dart';
+import 'package:p_project/service/db/settings_dao.dart';
 
 class HivePage extends BasePage {
   static const routeName = '/hive';
@@ -26,13 +26,13 @@ class _HivePageState extends BasePageState<HivePage> {
         children: <Widget>[
           FlatButton(
             onPressed: () {
-              HiveUtils.set('name', cnt);
+              SettingsDao().set('name', cnt);
             },
             child: Text('Save Name $cnt'),
           ),
           FlatButton(
             onPressed: () {
-              int c = HiveUtils.get('name') as int;
+              int c = SettingsDao().get('name') as int;
               setState(() {
                 cnt = c + 1;
               });
