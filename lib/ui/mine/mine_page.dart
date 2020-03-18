@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:p_project/utils/extentions/common_extentions.dart';
+import 'package:p_project/widget/img/img.dart';
 
 class MinePage extends StatefulWidget {
   static var routeName = '/mine';
@@ -18,7 +20,34 @@ class _MinePageState extends State<MinePage>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      body: Text("Mine"),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Center(
+            child: Text("Mine"),
+          ),
+          localImg(
+            'assets/common/female.svg',
+            width: 40.dp(),
+            height: 40.dp(),
+          ),
+          Center(
+            child: Text("Mine"),
+          ),
+          IconButton(
+            padding: EdgeInsets.zero,
+            icon: localImg(
+              'assets/common/female.svg',
+              width: 40.dp(),
+              height: 40.dp(),
+            ),
+            onPressed: () {},
+          ),
+          Center(
+            child: Text("Mine"),
+          ),
+        ],
+      ),
     );
   }
 }

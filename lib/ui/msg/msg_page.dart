@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/ui/learns/guesture_page.dart';
+import 'package:p_project/ui/msg/sliver/sliver_page.dart';
 import 'package:p_project/widget/wheel/simple_wheel.dart';
 
 import 'douyin/douyin_page.dart';
@@ -60,6 +61,12 @@ class _MsgPageState extends State<MsgPage>
                 RouterUtils.pushNamed(context, GlobalLoadingPage.routeName),
             child: Text('全局 Loading 弹框'),
           ),
+          FlatButton(
+            onPressed: () {
+              RouterUtils.pushNamed(context, SliverPage.routeName);
+            },
+            child: Text('Sliver'),
+          )
         ],
       )),
     );
