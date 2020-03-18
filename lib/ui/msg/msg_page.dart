@@ -6,6 +6,7 @@ import 'package:p_project/widget/wheel/simple_wheel.dart';
 
 import 'douyin/douyin_page.dart';
 import 'global_loading/global_loading_page.dart';
+import 'hive/hive_page.dart';
 
 class MsgPage extends StatefulWidget {
   static var routeName = '/msg';
@@ -66,7 +67,13 @@ class _MsgPageState extends State<MsgPage>
               RouterUtils.pushNamed(context, SliverPage.routeName);
             },
             child: Text('Sliver'),
-          )
+          ),
+          FlatButton(
+            onPressed: () {
+              RouterUtils.pushNamed(context, HivePage.routeName);
+            },
+            child: Text('Test Hive'),
+          ),
         ],
       )),
     );

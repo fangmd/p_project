@@ -9,6 +9,7 @@ import 'package:p_project/ui/learns/guesture_page.dart';
 import 'package:p_project/ui/main_page.dart';
 import 'package:p_project/ui/msg/douyin/douyin_page.dart';
 import 'package:p_project/ui/msg/global_loading/global_loading_page.dart';
+import 'package:p_project/ui/msg/hive/hive_page.dart';
 import 'package:p_project/ui/msg/sliver/sliver_page.dart';
 import 'package:p_project/ui/plugin/params/params_plugin_page.dart';
 import 'package:p_project/ui/plugin/plugin_page.dart';
@@ -25,6 +26,8 @@ Map<String, WidgetBuilder> buildRoutes() {
     GlobalLoadingPage.routeName: (_) => GlobalLoadingPage(),
     ListRefreshPage.routeName: (_) => ListRefreshPage(),
     SliverPage.routeName: (_) => SliverPage(),
+    HivePage.routeName: (_) => HivePage(),
+    
 
     // animate
     PageAnimatePage.routeName: (_) => PageAnimatePage(),

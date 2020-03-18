@@ -29,13 +29,17 @@ dependencies:
   pull_to_refresh: ^1.5.8
   flutter_svg: ^0.17.2
 
+  hive: ^1.4.1+1
+  hive_flutter: ^0.3.0+2
+  moor: ^2.4.2
+
   # flutter.dev
   device_info: ^0.4.1+4
   shared_preferences: ^0.5.6
   cached_network_image: ^2.0.0-rc
   package_info: ^0.4.0+13
   url_launcher: ^5.4.1
-  path_provider: ^1.5.1
+  path_provider: ^1.6.5
   image_picker: ^0.6.2+3
   # webview_flutter: ^0.3.18+1
   # google_maps_flutter: ^0.5.22+3
@@ -55,6 +59,8 @@ dependencies:
 dev_dependencies:
   flutter_localizations:
     sdk: flutter
+  hive_generator: ^0.7.0+2
+  build_runner: ^1.8.0
   # flutter_test:
   # sdk: flutter
 

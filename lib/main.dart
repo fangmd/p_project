@@ -8,6 +8,7 @@ import 'package:p_project/store/model/user_model.dart';
 import 'package:p_project/strings/localization/app_localization_container.dart';
 import 'package:p_project/strings/localization/localizations_utils.dart';
 import 'package:p_project/ui/splash/splash_page.dart';
+import 'package:p_project/utils/hive_utils.dart';
 import 'package:p_project/utils/logger.dart';
 import 'package:p_project/utils/screen_utils.dart';
 import 'package:p_project/utils/sp_utils.dart';
@@ -25,6 +26,9 @@ void main() {
   // }, onError: Crashlytics.instance.recordError);
   // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
 
+  WidgetsFlutterBinding.ensureInitialized();
+  HiveUtils.init();
+  
   runApp(AppLocalizationContainer(
     child: MyApp(),
   ));
