@@ -3,9 +3,12 @@ import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/ui/home/page_animate/one/one_page_animate_page.dart';
 import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
+import 'package:p_project/widget/route/fade_route.dart';
+import 'package:p_project/widget/route/no_animation_route.dart';
 
 class PageAnimatePage extends BasePage {
   static var routeName = '/page-animate';
+
   PageAnimatePage({Key key}) : super(key: key);
 
   @override
@@ -30,6 +33,24 @@ class _PageAnimatePageState extends State<PageAnimatePage> {
               RouterUtils.pushNamed(context, OnePageAnimatePage.routeName);
             },
             child: Text('One'),
+          ),
+          RaisedButton(
+            onPressed: () {
+              RouterUtils.pushWithRoute(
+                context,
+                NoAnimationRoute(child: OnePageAnimatePage()),
+              );
+            },
+            child: Text('使用 NoAnimationRoute 跳转'),
+          ),
+          RaisedButton(
+            onPressed: () {
+              RouterUtils.pushWithRoute(
+                context,
+                ScaleAnimationRoute(child: OnePageAnimatePage()),
+              );
+            },
+            child: Text('使用 ScaleAnimationRoute 跳转'),
           ),
         ],
       ),

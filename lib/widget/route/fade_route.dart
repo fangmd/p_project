@@ -23,6 +23,23 @@ class FadeRoute<T> extends PageRouteBuilder<T> {
     if (settings.isInitialRoute) return child;
     // Fades between routes. (If you don't want any animation,
     // just return child.)
+
     return FadeTransition(opacity: animation, child: child);
   }
+}
+
+class ScaleAnimationRoute<T> extends PageRouteBuilder<T> {
+  final Widget child;
+
+  ScaleAnimationRoute({
+    @required this.child,
+  }) : super(
+          pageBuilder: (BuildContext context, Animation<double> animation,
+              Animation<double> secondaryAnimation) {
+            return child;
+          },
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return ScaleTransition(scale: animation, child: child);
+          },
+        );
 }
