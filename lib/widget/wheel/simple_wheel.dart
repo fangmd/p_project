@@ -136,9 +136,10 @@ class _WheelWidgetState extends State<WheelWidget> {
 
   @override
   void didUpdateWidget(WheelWidget oldWidget) {
-    if (widget.initIndex != oldWidget.initIndex) {
-      pageController.jumpToPage(widget.initIndex);
-      _selectedIndex = widget.initIndex;
+    if (widget.initIndex != oldWidget.initIndex ||
+        widget.secData != oldWidget.secData) {
+      // pageController.jumpToPage(widget.initIndex);
+      _secSelectedIndex = 0;
     }
     super.didUpdateWidget(oldWidget);
   }
@@ -196,12 +197,14 @@ class _WheelWidgetState extends State<WheelWidget> {
   PageView _buildOne() {
     return PageView.builder(
       onPageChanged: (index) {
+        if (_selectedIndex == index) return;
         setState(() {
           _selectedIndex = index;
+          _secSelectedIndex = 0;
         });
-        if (widget.onSelected != null) {
-          widget.onSelected(_selectedIndex);
-        }
+        secPageController.jumpToPage(_secSelectedIndex);
+        widget.onSelected?.call(_selectedIndex);
+        widget.onSecSelected?.call(_secSelectedIndex);
       },
       controller: pageController,
       itemBuilder: (context, index) => _buildItem(context, index),
@@ -223,7 +226,7 @@ class _WheelWidgetState extends State<WheelWidget> {
       controller: secPageController,
       itemBuilder: (context, index) => _buildSecItem(context, index),
       scrollDirection: Axis.vertical,
-      itemCount: widget.data?.length ?? 0,
+      itemCount: widget.secData?.length ?? 0,
     );
   }
 
@@ -241,11 +244,15 @@ class _WheelWidgetState extends State<WheelWidget> {
   }
 
   Widget _buildSecItem(BuildContext context, int index) {
+    String name = '';
+    if (widget.secData.length > index) {
+      name = widget.secData?.elementAt(index) ?? '';
+    }
     return Container(
       height: itemHeight,
       alignment: Alignment.center,
       child: Text(
-        widget.secData?.elementAt(index) ?? '',
+        name ?? '',
         style: _secSelectedIndex == index
             ? widget.selectedTextStyle
             : widget.unSelectedTextStyle,
