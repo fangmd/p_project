@@ -28,7 +28,7 @@ void main() {
 
   WidgetsFlutterBinding.ensureInitialized();
   HiveUtils.init();
-  
+
   runApp(AppLocalizationContainer(
     child: MyApp(),
   ));
@@ -88,7 +88,7 @@ class _MyAppState extends State<MyApp> {
             return SplashPage();
           },
         ),
-        routes: buildRoutes(),
+        routes: route,
         // navigatorObservers: [
         //   FirebaseUtils.observer,
         //   AppAnalysis(),

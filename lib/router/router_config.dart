@@ -15,27 +15,24 @@ import 'package:p_project/ui/plugin/params/params_plugin_page.dart';
 import 'package:p_project/ui/plugin/plugin_page.dart';
 import 'package:p_project/ui/splash/splash_page.dart';
 
-Map<String, WidgetBuilder> buildRoutes() {
-  return {
-    MainPage.routeName: (_) => MainPage(),
-    SplashPage.routeName: (_) => SplashPage(),
-    ImageViewerPage.routeName: (_) => ImageViewerPage(),
-    GuesturePage.routeName: (_) => GuesturePage(),
-    PluginPage.routeName: (_) => PluginPage(),
-    ParamsPluginPage.routeName: (_) => ParamsPluginPage(),
-    GlobalLoadingPage.routeName: (_) => GlobalLoadingPage(),
-    ListRefreshPage.routeName: (_) => ListRefreshPage(),
-    SliverPage.routeName: (_) => SliverPage(),
-    HivePage.routeName: (_) => HivePage(),
-    
+Map<String, WidgetBuilder> route = {
+  MainPage.routeName: (_) => MainPage(),
+  SplashPage.routeName: (_) => SplashPage(),
+  ImageViewerPage.routeName: (_) => ImageViewerPage(),
+  GuesturePage.routeName: (_) => GuesturePage(),
+  PluginPage.routeName: (_) => PluginPage(),
+  ParamsPluginPage.routeName: (_) => ParamsPluginPage(),
+  GlobalLoadingPage.routeName: (_) => GlobalLoadingPage(),
+  ListRefreshPage.routeName: (_) => ListRefreshPage(),
+  SliverPage.routeName: (_) => SliverPage(),
+  HivePage.routeName: (_) => HivePage(),
 
-    // animate
-    PageAnimatePage.routeName: (_) => PageAnimatePage(),
-    OnePageAnimatePage.routeName: (_) => OnePageAnimatePage(),
+  // animate
+  PageAnimatePage.routeName: (_) => PageAnimatePage(),
+  OnePageAnimatePage.routeName: (_) => OnePageAnimatePage(),
 
-    ApkInstallPgae.routeName: (_) => ApkInstallPgae(),
-    NetPage.routeName: (_) => NetPage(),
+  ApkInstallPgae.routeName: (_) => ApkInstallPgae(),
+  NetPage.routeName: (_) => NetPage(),
 
-    DouYinPage.routeName: (_) => DouYinPage(),
-  };
-}
+  DouYinPage.routeName: (_) => DouYinPage(),
+};

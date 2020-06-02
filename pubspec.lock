@@ -133,7 +133,7 @@ packages:
       name: collection
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.14.11"
+    version: "1.14.12"
   convert:
     dependency: transitive
     description:
@@ -379,7 +379,7 @@ packages:
       name: intl
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.16.0"
+    version: "0.16.1"
   io:
     dependency: transitive
     description:
@@ -470,7 +470,7 @@ packages:
       path: "../flutterplugin/p_install"
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.3"
   p_params:
     dependency: "direct main"
     description:
