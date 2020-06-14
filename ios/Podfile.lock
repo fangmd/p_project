@@ -21,9 +21,15 @@ PODS:
     - Flutter
   - p_params (0.0.1):
     - Flutter
+  - p_umeng (0.0.1):
+    - Flutter
+    - UMCAnalytics (= 6.0.5)
+    - UMCCommon (= 2.1.1)
   - package_info (0.0.1):
     - Flutter
   - path_provider (0.0.1):
+    - Flutter
+  - path_provider_macos (0.0.1):
     - Flutter
   - "permission_handler (4.2.0+hotfix.1)":
     - Flutter
@@ -38,6 +44,9 @@ PODS:
   - sqflite (0.0.1):
     - Flutter
     - FMDB (~> 2.7.2)
+  - UMCAnalytics (6.0.5):
+    - UMCCommon
+  - UMCCommon (2.1.1)
   - url_launcher (0.0.1):
     - Flutter
   - url_launcher_macos (0.0.1):
@@ -56,8 +65,10 @@ DEPENDENCIES:
   - launch_review (from `.symlinks/plugins/launch_review/ios`)
   - p_install (from `.symlinks/plugins/p_install/ios`)
   - p_params (from `.symlinks/plugins/p_params/ios`)
+  - p_umeng (from `.symlinks/plugins/p_umeng/ios`)
   - package_info (from `.symlinks/plugins/package_info/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
   - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
   - share (from `.symlinks/plugins/share/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
@@ -71,6 +82,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - FMDB
+    - UMCAnalytics
+    - UMCCommon
 
 EXTERNAL SOURCES:
   device_info:
@@ -93,10 +106,14 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/p_install/ios"
   p_params:
     :path: ".symlinks/plugins/p_params/ios"
+  p_umeng:
+    :path: ".symlinks/plugins/p_umeng/ios"
   package_info:
     :path: ".symlinks/plugins/package_info/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
+  path_provider_macos:
+    :path: ".symlinks/plugins/path_provider_macos/ios"
   permission_handler:
     :path: ".symlinks/plugins/permission_handler/ios"
   share:
@@ -128,18 +145,22 @@ SPEC CHECKSUMS:
   launch_review: 75d5a956ba8eaa493e9c9d4bf4c05e505e8d5ed0
   p_install: 4436b10767abf620a9b2364c84478d7a090d65d4
   p_params: 6a36938b0ca8daa29a6c2f2cbb60c2ba47210c0b
+  p_umeng: a112ae44b8555286971965616a6c146fea59d0f7
   package_info: 48b108e75b8802c2d5e126f208ef540561c98aef
   path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
+  path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
   permission_handler: 59e1b9bd42a8fa96055ca59969723c07af837634
   share: bae0a282aab4483288913fc4dc0b935d4b491f2e
   shared_preferences: 430726339841afefe5142b9c1f50cb6bd7793e01
   shared_preferences_macos: f3f29b71ccbb56bf40c9dd6396c9acf15e214087
   shared_preferences_web: 141cce0c3ed1a1c5bf2a0e44f52d31eeb66e5ea9
   sqflite: 4001a31ff81d210346b500c55b17f4d6c7589dd0
+  UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
+  UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   url_launcher: a1c0cc845906122c4784c542523d8cacbded5626
   url_launcher_macos: fd7894421cd39320dce5f292fc99ea9270b2a313
   url_launcher_web: e5527357f037c87560776e36436bf2b0288b965c
 
 PODFILE CHECKSUM: 1b66dae606f75376c5f2135a8290850eeb09ae83
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

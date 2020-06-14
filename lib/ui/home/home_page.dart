@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/ui/home/net/net_page.dart';
 import 'package:p_project/ui/home/page_animate/page_animate_page.dart';
+import 'package:p_project/ui/home/sticker/sticker_page.dart';
 import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
 import 'package:p_project/ui/plugin/plugin_page.dart';
 import 'apk_install/apk_install.dart';
@@ -61,6 +62,12 @@ class _HomePageState extends State<HomePage>
                   RouterUtils.pushNamed(context, ListRefreshPage.routeName);
                 },
                 child: Text('下拉刷新'),
+              ),
+              RaisedButton(
+                onPressed: () {
+                  RouterUtils.pushNamed(context, StickerPage.routeName);
+                },
+                child: Text('发送表情'),
               ),
               TextField(),
             ],

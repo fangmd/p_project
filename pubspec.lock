@@ -470,7 +470,7 @@ packages:
       path: "../flutterplugin/p_install"
       relative: true
     source: path
-    version: "0.0.3"
+    version: "0.0.4"
   p_params:
     dependency: "direct main"
     description:

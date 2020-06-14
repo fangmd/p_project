@@ -4,6 +4,7 @@ import 'package:p_project/ui/home/list/list_refresh_page.dart';
 import 'package:p_project/ui/home/net/net_page.dart';
 import 'package:p_project/ui/home/page_animate/one/one_page_animate_page.dart';
 import 'package:p_project/ui/home/page_animate/page_animate_page.dart';
+import 'package:p_project/ui/home/sticker/sticker_page.dart';
 import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
 import 'package:p_project/ui/learns/guesture_page.dart';
 import 'package:p_project/ui/main_page.dart';
@@ -26,6 +27,9 @@ Map<String, WidgetBuilder> route = {
   ListRefreshPage.routeName: (_) => ListRefreshPage(),
   SliverPage.routeName: (_) => SliverPage(),
   HivePage.routeName: (_) => HivePage(),
+  StickerPage.routeName: (_) => StickerPage(),
+
+  
 
   // animate
   PageAnimatePage.routeName: (_) => PageAnimatePage(),
