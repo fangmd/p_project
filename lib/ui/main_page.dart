@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/store/provider_widget.dart';
 import 'package:p_project/styles/colors.dart';
+import 'package:p_project/utils/logger.dart';
 import 'package:p_project/widget/tab/bottom_tab.dart';
 import 'home/home_page.dart';
 import 'main_vm.dart';
@@ -139,6 +140,7 @@ class _MainPageState extends BasePageState<MainPage>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    print('main: didChangeDependencies');
     // FirebaseUtils.observer.subscribe(this, ModalRoute.of(context));
   }
 
@@ -146,6 +148,13 @@ class _MainPageState extends BasePageState<MainPage>
   void dispose() {
     _controller.dispose();
     // FirebaseUtils.observer.unsubscribe(this);
+    print('main: dispose');
     super.dispose();
+  }
+
+  @override
+  void deactivate() {
+    print('main: dispose');
+    super.deactivate();
   }
 }

@@ -12,6 +12,7 @@ import 'package:p_project/utils/hive_utils.dart';
 import 'package:p_project/utils/logger.dart';
 import 'package:p_project/utils/screen_utils.dart';
 import 'package:p_project/utils/sp_utils.dart';
+import 'package:p_project/widget/fps_caculator.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'common/http/http.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -47,11 +48,14 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     SPUtils.getInstance();
     // AnalyticsUtils.init();
+
+    // FPSUtils().start();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    Logger.d(msg: 'Main build');
     var locale = AppLocalizationContainer.of(context).locale;
 
     return AppStore.init(
@@ -74,7 +78,7 @@ class _MyAppState extends State<MyApp> {
         localeResolutionCallback:
             (Locale locale, Iterable<Locale> supportedLocales) {
           LocalizationsUtils.getAppLocale().then((value) {
-            Logger.d(msg: "$value");
+            Logger.d(msg: "LocalizationsUtils $value");
             LocalizationsUtils.currentLocale = value;
             Http.instance.changeHeader(
                 'Lang', converToHeaderLocale(LocalizationsUtils.currentLocale));

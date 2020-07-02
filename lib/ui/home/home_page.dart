@@ -3,6 +3,7 @@ import 'package:p_project/router/router.dart';
 import 'package:p_project/ui/home/net/net_page.dart';
 import 'package:p_project/ui/home/page_animate/page_animate_page.dart';
 import 'package:p_project/ui/home/sticker/sticker_page.dart';
+import 'package:p_project/ui/home/test.dart';
 import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
 import 'package:p_project/ui/plugin/plugin_page.dart';
 import 'apk_install/apk_install.dart';
@@ -19,6 +20,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin<HomePage> {
+  int cnt = 0;
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -70,6 +72,15 @@ class _HomePageState extends State<HomePage>
                 child: Text('发送表情'),
               ),
               TextField(),
+              TextWidget(name: '$cnt'),
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    cnt++;
+                  });
+                },
+                child: Text('Cnt ++'),
+              ),
             ],
           ),
         ),
@@ -79,4 +90,14 @@ class _HomePageState extends State<HomePage>
 
   @override
   bool get wantKeepAlive => true;
+
+  @override
+  void deactivate() {
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 }

@@ -728,6 +728,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.9.3"
+  statsfl:
+    dependency: "direct main"
+    description:
+      name: statsfl
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.0+2"
   stream_channel:
     dependency: transitive
     description:
