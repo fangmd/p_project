@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/ui/learns/guesture_page.dart';
 import 'package:p_project/ui/msg/sliver/sliver_page.dart';
-import 'package:p_project/widget/wheel/simple_wheel.dart';
+import 'package:p_widget/p_widget.dart';
 
 import 'douyin/douyin_page.dart';
 import 'global_loading/global_loading_page.dart';

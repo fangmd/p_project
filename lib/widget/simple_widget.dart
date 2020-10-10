@@ -3,20 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:p_project/styles/colors.dart';
 import 'package:screen_adaptation/screen_utils.dart';
 
-/// 空白自动展开控件
-Widget emptyExpanded({Color color}) {
-  if (color != null) {
-    return Expanded(
-      child: Container(
-        width: double.infinity,
-        color: color,
-        child: SizedBox(),
-      ),
-    );
-  }
-  return Expanded(child: SizedBox());
-}
-
 /// 无点击效果 点击控件
 Widget clickWidget({@required child, @required onTap}) {
   return GestureDetector(

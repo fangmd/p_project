@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:p_image_loader/p_image_loader.dart';
 import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/styles/colors.dart';
-import 'package:p_project/widget/img/cached_net_img.dart';
 
 import '../main_page.dart';
 
@@ -38,11 +38,7 @@ class _SplashPageState extends BasePageState<SplashPage> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        child: CachedNetImg(
-          imgUrl: _img ?? '',
-          placeHolderColor: white,
-          fit: BoxFit.cover,
-        ),
+        child: Container(),
       ),
     );
   }
