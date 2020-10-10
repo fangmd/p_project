@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/ui/home/page_animate/one/one_page_animate_page.dart';
-import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
 import 'package:p_project/widget/route/fade_route.dart';
 import 'package:p_project/widget/route/no_animation_route.dart';
 

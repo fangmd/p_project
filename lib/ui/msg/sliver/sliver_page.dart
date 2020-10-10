@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:p_project/common/base/base_page.dart';
 import 'package:screen_adaptation/screen_extension.dart';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/router/router.dart';
-import 'package:p_project/ui/image_viewer/image_viewer_page.dart';
 import 'package:p_project/ui/plugin/params/params_plugin_page.dart';
 
 
