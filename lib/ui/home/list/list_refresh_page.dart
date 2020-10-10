@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/styles/text.dart';
-import 'package:p_project/utils/extentions/common_extentions.dart';
+import 'package:screen_adaptation/screen_extension.dart';
 
 class ListRefreshPage extends BasePage {
   static const routeName = '/list-refresh-page';
@@ -40,7 +40,7 @@ class _ListRefreshPageState extends State<ListRefreshPage> {
 
   Widget _buildItem(BuildContext context, int index) {
     return Container(
-      height: 80.dp(),
+      height: 80.dp,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[

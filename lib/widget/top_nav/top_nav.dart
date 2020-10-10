@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/styles/text.dart';
-import 'package:p_project/utils/screen_utils.dart';
+import 'package:screen_adaptation/screen_utils.dart';
 
 /// 导航栏
 /// SafeArea

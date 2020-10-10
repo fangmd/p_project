@@ -1,5 +1,5 @@
+import 'package:p_utils/p_utils.dart';
 import '../../c.dart';
-import '../logger.dart';
 import 'package:p_umeng/p_umeng.dart';
 
 /// 统计功能

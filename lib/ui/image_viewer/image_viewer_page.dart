@@ -5,8 +5,8 @@ import 'package:p_project/router/router.dart';
 import 'package:p_project/widget/img_viewer/image_viewer.dart';
 import 'package:p_project/widget/route/fade_route.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:screen_adaptation/screen_extension.dart';
 import '../../mock.dart';
-import 'package:p_project/utils/extentions/common_extentions.dart';
 
 /// 图片游览功能 Demo
 class ImageViewerPage extends BasePage {
@@ -55,8 +55,8 @@ class _ImageViewerPageState extends BasePageState<ImageViewerPage> {
                   )),
                 );
               },
-              width: 200.dp(),
-              height: 400.dp(),
+              width: 200.dp,
+              height: 400.dp,
               fit: BoxFit.contain,
             ),
             ImgHero(
@@ -78,8 +78,8 @@ class _ImageViewerPageState extends BasePageState<ImageViewerPage> {
                   )),
                 );
               },
-              width: 200.dp(),
-              height: 400.dp(),
+              width: 200.dp,
+              height: 400.dp,
               fit: BoxFit.contain,
             ),
             ImgHero(
@@ -101,8 +101,8 @@ class _ImageViewerPageState extends BasePageState<ImageViewerPage> {
                   )),
                 );
               },
-              width: 200.dp(),
-              height: 400.dp(),
+              width: 200.dp,
+              height: 400.dp,
               fit: BoxFit.contain,
             )
           ],

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:p_project/utils/device_info_utils.dart';
-import 'package:p_project/utils/logger.dart';
-import 'package:p_project/utils/sp_utils.dart';
+import 'package:p_utils/p_utils.dart';
 import '../../c.dart';
 import '../string_base.dart';
 import 'my_localizations.dart';

@@ -1,14 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_luban/flutter_luban.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:image_crop/image_crop.dart';
-import 'package:p_project/manager/file_manager.dart';
+import 'package:p_img_compress/p_img_compress.dart';
 import 'package:p_project/strings/localization/localizations_utils.dart';
 import 'package:p_project/styles/colors.dart';
-import 'package:p_project/utils/logger.dart';
+import 'package:p_utils/p_utils.dart';
 import '../../c.dart';
+import 'package:p_widget/p_widget.dart';
 
 /// 图片剪切
 class CropImageRoute extends StatefulWidget {
@@ -110,14 +109,9 @@ class _CropImageRouteState extends State<CropImageRoute> {
         file: originalFile,
         area: crop.area,
       );
-      String imgCachedPath = await FileManager.getImgCachePath();
-      Logger.d(tag: Tag.FILE, msg: 'imgcached path: $imgCachedPath');
-      CompressObject compressObject = CompressObject(
-        imageFile: cropedImg, //image
-        path: imgCachedPath, //compress to path
-      );
-      String filePath = await Luban.compressImage(compressObject);
-      Navigator.pop(context, File(filePath));
+      final filePath =
+          await ImageCompress.compressImg(cropedImg, loading: false);
+      Navigator.pop(context, filePath);
     } else {
       Logger.d(tag: Tag.CROP, msg: 'no permission, return originalFile');
       Navigator.pop(context, originalFile);

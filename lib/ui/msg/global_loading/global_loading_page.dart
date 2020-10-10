@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/common/base/base_page.dart';
-import 'package:p_project/widget/dialog/global_loading.dart';
+import 'package:p_widget/p_widget.dart';
 
 class GlobalLoadingPage extends BasePage {
   static const routeName = '/global-loading';

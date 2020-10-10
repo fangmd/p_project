@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:p_project/utils/extentions/common_extentions.dart';
 import 'package:p_project/widget/img/img.dart';
+import 'package:screen_adaptation/screen_extension.dart';
 
 class MinePage extends StatefulWidget {
   static var routeName = '/mine';
@@ -28,8 +28,8 @@ class _MinePageState extends State<MinePage>
           ),
           localImg(
             'assets/common/female.svg',
-            width: 40.dp(),
-            height: 40.dp(),
+            width: 40.dp,
+            height: 40.dp,
           ),
           Center(
             child: Text("Mine"),
@@ -38,8 +38,8 @@ class _MinePageState extends State<MinePage>
             padding: EdgeInsets.zero,
             icon: localImg(
               'assets/common/female.svg',
-              width: 40.dp(),
-              height: 40.dp(),
+              width: 40.dp,
+              height: 40.dp,
             ),
             onPressed: () {},
           ),

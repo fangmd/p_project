@@ -1,16 +1,16 @@
 import 'package:dio/dio.dart';
-import 'package:p_project/common/base/base_response.dart';
 import 'package:p_project/strings/localization/localizations_utils.dart';
-import 'package:p_project/utils/logger.dart';
-import 'package:p_project/utils/toast_utils.dart';
+import 'package:p_utils/p_utils.dart';
 import '../../c.dart';
 import 'http_utils.dart';
+import 'package:p_base/p_base.dart';
 
 /// 1. token 快过期时，刷新 token
 /// 2. 全局网络错误提示
 class RefreshTokenInterceptor extends InterceptorsWrapper {
   /// app 启动一次，允许执行一次刷新token操作，避免死循环
   static bool refresh = true;
+
   @override
   Future onResponse(Response response) async {
     BaseResponse baseResponse = BaseResponse.fromJson(response.data);

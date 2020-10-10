@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:p_project/styles/colors.dart';
-import 'package:p_project/utils/screen_utils.dart';
+import 'package:screen_adaptation/screen_utils.dart';
 
 /// 空白自动展开控件
 Widget emptyExpanded({Color color}) {

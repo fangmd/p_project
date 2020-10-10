@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:p_project/utils/logger.dart';
 
 class TextWidget extends StatefulWidget {
   final String name;

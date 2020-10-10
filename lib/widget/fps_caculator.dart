@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/scheduler.dart';
-import 'package:p_project/utils/logger.dart';
+import 'package:p_utils/p_utils.dart';
 
 /// 利用动画的 Tinker 计算 fps
 class FPSUtils {

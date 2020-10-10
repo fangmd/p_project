@@ -1,4 +1,4 @@
-import 'package:p_project/common/base/base_vm.dart';
+import 'package:p_base/p_base.dart';
 
 class MainVM extends BaseVM {
   /// 是否显示 更新弹框

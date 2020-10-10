@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:p_project/utils/screen_utils.dart';
-import 'package:p_project/utils/extentions/common_extentions.dart';
+import 'package:screen_adaptation/screen_utils.dart';
 import 'colors.dart';
 
 class AppTheme {
@@ -15,7 +14,7 @@ class AppTheme {
 
   static TextStyle black34Bold = TextStyle(
     color: MColor.black33,
-    fontSize: 34.sp(),
+    fontSize: px2sp(34),
     fontWeight: FontWeight.bold,
   );
 

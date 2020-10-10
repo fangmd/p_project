@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/styles/colors.dart';
 import 'package:p_project/styles/text.dart';
-import 'package:p_project/utils/extentions/common_extentions.dart';
 import 'package:p_project/widget/img/img.dart';
+import 'package:screen_adaptation/screen_extension.dart';
 
 AppBar getAppBar(String title, {BuildContext context}) {
   return AppBar(
@@ -15,8 +15,8 @@ AppBar getAppBar(String title, {BuildContext context}) {
       },
       icon: localImg(
         'assets/common/toolbar_back.svg',
-        width: 18.dp(),
-        height: 34.dp(),
+        width: 18.dp,
+        height: 34.dp,
       ),
     ),
     title: Text(title, style: AppTheme.black34Bold),

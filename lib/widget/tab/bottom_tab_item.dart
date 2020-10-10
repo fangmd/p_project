@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:p_project/styles/colors.dart';
 import 'package:p_project/styles/text.dart';
+import 'package:screen_adaptation/screen_extension.dart';
 import '../simple_widget.dart';
 import 'bottom_tab.dart';
-import 'package:p_project/utils/extentions/common_extentions.dart';
 
 class BottomTabItem extends StatefulWidget {
   final Item item;
@@ -22,7 +22,7 @@ class _BottomTabItemState extends State<BottomTabItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100.dp(),
+      height: 100.dp,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -30,8 +30,8 @@ class _BottomTabItemState extends State<BottomTabItem> {
             children: <Widget>[
               Image.asset(
                 widget.item.getImgLocalPath(),
-                width: 44.dp(),
-                height: 44.dp(),
+                width: 44.dp,
+                height: 44.dp,
                 fit: BoxFit.contain,
               ),
               Visibility(
@@ -40,8 +40,8 @@ class _BottomTabItemState extends State<BottomTabItem> {
                   top: 0,
                   right: 0,
                   child: circleWidget(
-                    width: 20.dp(),
-                    height: 20.dp(),
+                    width: 20.dp,
+                    height: 20.dp,
                     color: red1,
                   ),
                 ),

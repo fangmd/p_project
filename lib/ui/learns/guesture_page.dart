@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/styles/colors.dart';
-import 'package:p_project/utils/extentions/common_extentions.dart';
-import 'package:p_project/utils/logger.dart';
 import 'package:p_project/widget/simple_widget.dart';
+import 'package:p_utils/p_utils.dart';
+import 'package:screen_adaptation/screen_extension.dart';
 
 /// 手势触摸 tests
 class GuesturePage extends BasePage {
@@ -39,7 +39,6 @@ class _GuesturePageState extends BasePageState<GuesturePage> {
     final matrix = Matrix4.identity()
       ..translate(_dx, _dy)
       ..scale(_scale);
-
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -72,14 +71,14 @@ class _GuesturePageState extends BasePageState<GuesturePage> {
         });
       },
       child: Container(
-        width: 200.dp(),
-        height: 200.dp(),
+        width: 200.dp,
+        height: 200.dp,
         color: grey_666,
         alignment: Alignment.center,
         child: Transform(
           child: reactangleWidget(
-            width: 100.dp(),
-            height: 100.dp(),
+            width: 100.dp,
+            height: 100.dp,
             color: red1,
           ),
           transform: matrix,
@@ -113,14 +112,14 @@ class _GuesturePageState extends BasePageState<GuesturePage> {
         });
       },
       child: Container(
-        width: 200.dp(),
-        height: 200.dp(),
+        width: 200.dp,
+        height: 200.dp,
         color: grey_666,
         alignment: Alignment.center,
         child: Transform(
           child: reactangleWidget(
-            width: 100.dp(),
-            height: 100.dp(),
+            width: 100.dp,
+            height: 100.dp,
             color: red1,
           ),
           transform: matrix,

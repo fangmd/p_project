@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/store/provider_widget.dart';
 import 'package:p_project/styles/colors.dart';
-import 'package:p_project/utils/logger.dart';
 import 'package:p_project/widget/tab/bottom_tab.dart';
 import 'home/home_page.dart';
 import 'main_vm.dart';
