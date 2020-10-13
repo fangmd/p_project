@@ -81,9 +81,9 @@ class LocalizationsUtils {
       // use device language
       String deviceLocale = await DeviceInfoUtils.getLocalization();
       localLocale = convertDeviceLocaleToFlutterLocale(deviceLocale);
-      Logger.d(msg: "use device locale: $localLocale");
+      Logger.d(msg: "current device locale: $localLocale");
     } else {
-      Logger.d(msg: "use sp locale: $localLocale");
+      Logger.d(msg: "current sp locale: $localLocale");
     }
     return localLocale;
   }

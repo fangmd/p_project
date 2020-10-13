@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:p_image_loader/p_image_loader.dart';
 import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/router/router.dart';
-import 'package:p_project/styles/colors.dart';
 
 import '../main_page.dart';
 
