@@ -10,6 +10,7 @@ import 'package:p_project/strings/localization/localizations_utils.dart';
 import 'package:p_project/ui/splash/splash_page.dart';
 import 'package:p_project/utils/hive_utils.dart';
 import 'package:p_utils/p_utils.dart';
+import 'package:p_widget/p_widget.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:screen_adaptation/screen_utils.dart';
 import 'common/http/http.dart';
@@ -48,6 +49,7 @@ class _MyAppState extends State<MyApp> {
     // AnalyticsUtils.init();
 
     // FPSUtils().start();
+    GlobalLoading.navigatorKey = RouterUtils.navigatorKey;
     super.initState();
   }
 
