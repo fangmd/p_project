@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../string_base.dart';
 import '../string_en.dart';
-import '../string_vi.dart';
 import '../string_zh.dart';
 import 'localizations_utils.dart';
 
@@ -15,7 +14,6 @@ class MyLocalizations {
   static Map<String, StringBase> localizedValues = {
     LocalizationsUtils.EN: StringEn(),
     LocalizationsUtils.ZH: StringZh(),
-    LocalizationsUtils.VI: StringVi(),
   };
 
   StringBase get currentLocalized {

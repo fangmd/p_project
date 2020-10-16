@@ -1,21 +1,54 @@
 import 'package:hive/hive.dart';
 
-abstract class HiveDao {
+abstract class HiveDao<T> {
   String getBoxName();
 
-  init() {
-    Hive.openBox(getBoxName());
+  init() async {
+    await Hive.openBox<T>(getBoxName());
   }
 
-  Box _getBox() {
-    return Hive.box(getBoxName());
+  Box<T> getBox() {
+    return Hive.box<T>(getBoxName());
   }
 
   void set(String key, dynamic value) {
-    _getBox().put(key, value);
+    getBox().put(key, value);
   }
 
   dynamic get(String key) {
-    return _getBox().get(key);
+    return getBox().get(key);
+  }
+
+  dynamic getAt(int index) {
+    return getBox().getAt(index);
+  }
+
+  Future<int> add(T data) {
+    return getBox().add(data);
+  }
+
+  String getString(String key) {
+    if (getBox().get(key) is String) {
+      return getBox().get(key) as String;
+    }
+    return null;
+  }
+
+  void delete(String key) {
+    getBox().delete(key);
+  }
+
+  int getInt(String key) {
+    if (getBox().get(key) is int) {
+      return getBox().get(key) as int;
+    }
+    return null;
+  }
+
+  double getDouble(String key) {
+    if (getBox().get(key) is double) {
+      return getBox().get(key) as double;
+    }
+    return null;
   }
 }

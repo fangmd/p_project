@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:p_project/common/event_bus.dart';
-
 import 'localizations_utils.dart';
 
 class AppLocalizationContainer extends StatefulWidget {
@@ -14,8 +12,8 @@ class AppLocalizationContainer extends StatefulWidget {
   AppLocalizationContainer({@required this.child});
 
   static _AppLocalizationContainerState of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(
-            _AppLocalizationInheritedWidget) as _AppLocalizationInheritedWidget)
+    return context
+        .dependOnInheritedWidgetOfExactType<_AppLocalizationInheritedWidget>()
         .data;
   }
 }
@@ -27,9 +25,7 @@ class _AppLocalizationContainerState extends State<AppLocalizationContainer> {
   void initState() {
     super.initState();
     LocalizationsUtils.getAppLocale().then((value) {
-      setState(() {
-        locale = value;
-      });
+      setLocal(value);
     });
   }
 
@@ -42,16 +38,15 @@ class _AppLocalizationContainerState extends State<AppLocalizationContainer> {
   }
 
   void setLocal(String locale) {
-    if (locale != null) {
-      // save locale
-      LocalizationsUtils.setAppLocale(locale);
-    }
+    if (locale == null || locale.isEmpty) return;
     if (this.locale == locale) return;
+
+    // save locale
+    LocalizationsUtils.saveAppLocale(locale);
+    LocalizationsUtils.currentLocale = locale;
+
     setState(() {
       this.locale = locale;
-    });
-    Future.delayed(Duration(milliseconds: 500), () {
-      eventBus.fire(LocaleChangeEvent());
     });
   }
 }

@@ -78,8 +78,7 @@ class _MyAppState extends State<MyApp> {
         localeResolutionCallback:
             (Locale locale, Iterable<Locale> supportedLocales) {
           LocalizationsUtils.getAppLocale().then((value) {
-            Logger.d(msg: "LocalizationsUtils $value");
-            LocalizationsUtils.currentLocale = value;
+            // Logger.d(msg: "LocalizationsUtils $value");
             Http.instance.changeHeader(
                 'Lang', converToHeaderLocale(LocalizationsUtils.currentLocale));
           });

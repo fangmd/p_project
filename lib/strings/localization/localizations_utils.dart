@@ -1,7 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:p_project/service/db/settings_dao.dart';
+import 'package:p_project/store/app_store.dart';
 import 'package:p_utils/p_utils.dart';
+import 'package:flutter/material.dart';
 import '../../c.dart';
 import '../string_base.dart';
+import 'app_localization_container.dart';
 import 'my_localizations.dart';
 
 StringBase getI18n(BuildContext context) {
@@ -20,9 +23,6 @@ String converToHeaderLocale(String localeStr) {
     case "zh":
       return 'zh-CN';
       break;
-    case 'vi':
-      return 'vi-VN';
-      break;
   }
   return '';
 }
@@ -31,7 +31,6 @@ String converToHeaderLocale(String localeStr) {
 class LocalizationsUtils {
   static const ZH = 'zh';
   static const EN = 'en';
-  static const VI = 'vi';
 
   static String currentLocale = '';
 
@@ -41,9 +40,8 @@ class LocalizationsUtils {
   /// 获取 app 支持的语言
   static List<Locale> getSupportLocale() {
     return [
-      const Locale(EN),
       const Locale(ZH),
-      const Locale(VI),
+      const Locale(EN),
     ];
   }
 
@@ -59,9 +57,6 @@ class LocalizationsUtils {
       case 'zh_TW':
         ret = ZH;
         break;
-      case 'vi-VN':
-        ret = VI;
-        break;
       default:
         break;
     }
@@ -74,40 +69,36 @@ class LocalizationsUtils {
   }
 
   /// 获取 app 应该显示的语言
-  static Future<String> getAppLocale() async {
-    SPUtils spUtils = await SPUtils.getInstance();
-    String localLocale = spUtils.getString(SP.LOCALIZATION);
+  static Future<String> getAppLocale({showLog = true}) async {
+    String localLocale = SettingsDao().get(SP.LOCALIZATION);
     if (localLocale == null) {
       // use device language
       String deviceLocale = await DeviceInfoUtils.getLocalization();
       localLocale = convertDeviceLocaleToFlutterLocale(deviceLocale);
-      Logger.d(msg: "current device locale: $localLocale");
+      if (showLog) Logger.d(msg: "use device locale: $localLocale");
     } else {
-      Logger.d(msg: "current sp locale: $localLocale");
+      if (showLog) Logger.d(msg: "use sp locale: $localLocale");
     }
     return localLocale;
   }
 
   /// 设置 APP 语言
-  static setAppLocale(String locale) async {
-    await SPUtils.getInstance()
-      ..putString(SP.LOCALIZATION, locale);
+  static saveAppLocale(String locale) async {
+    SettingsDao().set(SP.LOCALIZATION, locale);
   }
 
-  static String getLanguageIc(BuildContext context) {
-    var str = MyLocalizations.of(context).locale.languageCode;
-    String ret = 'assets/home/england_ic.png';
-    switch (str) {
-      case EN:
-        ret = 'assets/home/england_ic.png';
-        break;
-      case ZH:
-        ret = 'assets/home/china_ic.png';
-        break;
-      case VI:
-        ret = 'assets/home/vietnam_ic.png';
-        break;
+  /// 切换语言
+  static switchLocale({String locale}) {
+    if (locale != null) {
+      AppLocalizationContainer.of(AppStore.widgetCtx).setLocal(locale);
+    } else {
+      if (LocalizationsUtils.currentLocale == LocalizationsUtils.ZH) {
+        AppLocalizationContainer.of(AppStore.widgetCtx)
+            .setLocal(LocalizationsUtils.EN);
+      } else {
+        AppLocalizationContainer.of(AppStore.widgetCtx)
+            .setLocal(LocalizationsUtils.ZH);
+      }
     }
-    return ret;
   }
 }

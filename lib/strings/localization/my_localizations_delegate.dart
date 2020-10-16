@@ -10,7 +10,7 @@ class MyLocalizationsDelegate extends LocalizationsDelegate<MyLocalizations> {
   @override
   bool isSupported(Locale locale) {
     ///支持中文和英语
-    return [LocalizationsUtils.EN, LocalizationsUtils.ZH, LocalizationsUtils.VI]
+    return [LocalizationsUtils.EN, LocalizationsUtils.ZH]
         .contains(locale.languageCode);
   }
 
