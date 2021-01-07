@@ -1,5 +1,4 @@
 import 'package:p_project/service/db/settings_dao.dart';
-import 'package:p_project/store/app_store.dart';
 import 'package:p_utils/p_utils.dart';
 import 'package:flutter/material.dart';
 import '../../c.dart';
@@ -7,12 +6,16 @@ import '../string_base.dart';
 import 'app_localization_container.dart';
 import 'my_localizations.dart';
 
-StringBase getI18n(BuildContext context) {
+StringBase i18n(BuildContext context) {
   return MyLocalizations.of(context).currentLocalized;
 }
 
-StringBase getI18n2() {
+StringBase i18n2() {
   return MyLocalizations.localizedValues[LocalizationsUtils.currentLocale];
+}
+
+bool isEN() {
+  return LocalizationsUtils.currentLocale == LocalizationsUtils.EN;
 }
 
 String converToHeaderLocale(String localeStr) {
@@ -32,7 +35,7 @@ class LocalizationsUtils {
   static const ZH = 'zh';
   static const EN = 'en';
 
-  static String currentLocale = '';
+  static String currentLocale = LocalizationsUtils.EN;
 
   /// 默认语言(设备语言不在支持范围的时候使用)
   static const String DEFAULE_LOCALE = EN;
@@ -53,6 +56,7 @@ class LocalizationsUtils {
       case 'en_US':
         ret = EN;
         break;
+      case 'en-CN':
       case 'zh_CN':
       case 'zh_TW':
         ret = ZH;
@@ -75,7 +79,7 @@ class LocalizationsUtils {
       // use device language
       String deviceLocale = await DeviceInfoUtils.getLocalization();
       localLocale = convertDeviceLocaleToFlutterLocale(deviceLocale);
-      if (showLog) Logger.d(msg: "use device locale: $localLocale");
+      if (showLog) Logger.d(msg: "use device locale: $deviceLocale $localLocale");
     } else {
       if (showLog) Logger.d(msg: "use sp locale: $localLocale");
     }
@@ -88,17 +92,16 @@ class LocalizationsUtils {
   }
 
   /// 切换语言
-  static switchLocale({String locale}) {
+  static switchLocale(BuildContext context, {String locale}) {
     if (locale != null) {
-      AppLocalizationContainer.of(AppStore.widgetCtx).setLocal(locale);
+      AppLocalizationContainer.of(context).setLocal(locale);
     } else {
       if (LocalizationsUtils.currentLocale == LocalizationsUtils.ZH) {
-        AppLocalizationContainer.of(AppStore.widgetCtx)
-            .setLocal(LocalizationsUtils.EN);
+        AppLocalizationContainer.of(context).setLocal(LocalizationsUtils.EN);
       } else {
-        AppLocalizationContainer.of(AppStore.widgetCtx)
-            .setLocal(LocalizationsUtils.ZH);
+        AppLocalizationContainer.of(context).setLocal(LocalizationsUtils.ZH);
       }
     }
+    saveAppLocale(locale);
   }
 }

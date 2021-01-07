@@ -44,7 +44,7 @@ class RefreshTokenInterceptor extends InterceptorsWrapper {
 class ErrorToastInterceptor extends InterceptorsWrapper {
   @override
   Future onError(DioError err) {
-    ToastUtils.show(getI18n2().netError);
+    ToastUtils.show(i18n2().netError);
     return super.onError(err);
   }
 }

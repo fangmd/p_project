@@ -60,7 +60,7 @@ class _CropImageRouteState extends State<CropImageRoute> {
                     Navigator.pop(context, null);
                   }
                 },
-                child: Text(getI18n(context).confirm),
+                child: Text(i18n(context).confirm),
               ),
             ],
           ),

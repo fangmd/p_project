@@ -47,16 +47,16 @@ class AppErrorCode {
     String ret = '';
     // switch (code) {
     //   case CONTENT:
-    //     ret = getI18n2().contentError;
+    //     ret = i18n2().contentError;
     //     break;
     //   case PHONE:
-    //     ret = getI18n2().phoneError;
+    //     ret = i18n2().phoneError;
     //     break;
     //   case CITY_UNSELECTED:
-    //     ret = getI18n2().cityUnSelected;
+    //     ret = i18n2().cityUnSelected;
     //     break;
     //   case MODIFY_FILE:
-    //     ret = getI18n2().modifyFail;
+    //     ret = i18n2().modifyFail;
     //     break;
     //   default:
     //     ret = 'CError';
