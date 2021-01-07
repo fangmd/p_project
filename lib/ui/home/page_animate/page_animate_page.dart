@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/ui/home/page_animate/one/one_page_animate_page.dart';
-import 'package:router/animate/no_animation_route.dart';
-import 'package:router/animate/scale_route.dart';
+import 'package:p_router/animate/no_animation_route.dart';
+import 'package:p_router/animate/scale_route.dart';
 
 class PageAnimatePage extends BasePage {
   static var routeName = '/page-animate';

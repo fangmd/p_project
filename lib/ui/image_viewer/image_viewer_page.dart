@@ -4,7 +4,7 @@ import 'package:p_project/common/base/base_page.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/widget/img_viewer/image_viewer.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:router/animate/fade_route.dart';
+import 'package:p_router/animate/fade_route.dart';
 import 'package:screen_adaptation/screen_extension.dart';
 import '../../mock.dart';
 
