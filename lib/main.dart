@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:p_project/enums/user.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/router/router_config.dart';
 import 'package:p_project/store/app_store.dart';
@@ -28,6 +28,8 @@ void main() {
 
   WidgetsFlutterBinding.ensureInitialized();
   HiveUtils.init();
+
+  final a = UserRoleExtension.fromInt(1);
 
   runApp(AppLocalizationContainer(
     child: MyApp(),
