@@ -174,32 +174,32 @@ class _OnePageAnimatePageState extends State<OnePageAnimatePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            FadeAnimationNoThird(
-              child: FadeOutAnimationNoThird(
-                controller: _mController,
-                delay: 1,
-                child: Container(
-                  height: 300,
-                  width: double.infinity,
-                  color: Colors.green,
-                ),
-              ),
-            ),
-            FadeAnimationNoThird(
-              child: FadeOutAnimationNoThird(
-                controller: _mController,
-                delay: 1.1,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Text(
-                    '页面跳转动画 Demo 1 页面跳转动画 Demo 1 页面跳转动画 Demo 1 页面跳转动画 Demo 1',
-                    style: AppTheme.adBack30bold,
-                  ),
-                ),
-              ),
-            ),
+            // FadeAnimationNoThird(
+            //   child: FadeOutAnimationNoThird(
+            //     controller: _mController,
+            //     delay: 1,
+            //     child: Container(
+            //       height: 300,
+            //       width: double.infinity,
+            //       color: Colors.green,
+            //     ),
+            //   ),
+            // ),
+            // FadeAnimationNoThird(
+            //   child: FadeOutAnimationNoThird(
+            //     controller: _mController,
+            //     delay: 1.1,
+            //     child: Padding(
+            //       padding: const EdgeInsets.all(20.0),
+            //       child: Text(
+            //         '页面跳转动画 Demo 1 页面跳转动画 Demo 1 页面跳转动画 Demo 1 页面跳转动画 Demo 1',
+            //         style: AppTheme.adBack30bold,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             SizedBox(height: 100),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 _routeWithAnimation();
               },
