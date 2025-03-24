@@ -4,20 +4,20 @@ import 'package:p_widget/p_widget.dart';
 /// 1. 网络请求添加 loading 动画
 class LoadingInterceptor extends InterceptorsWrapper {
   @override
-  Future onRequest(RequestOptions options) {
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     GlobalLoading.showLoading();
-    return super.onRequest(options);
+    super.onRequest(options, handler);
   }
 
   @override
-  Future onResponse(Response response) async {
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
     GlobalLoading.hideLoading();
-    return super.onResponse(response);
+    super.onResponse(response, handler);
   }
 
   @override
-  Future onError(DioError err) {
+  void onError(DioError err, ErrorInterceptorHandler handler) {
     GlobalLoading.hideLoading();
-    return super.onError(err);
+    super.onError(err, handler);
   }
 }

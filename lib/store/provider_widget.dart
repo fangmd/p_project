@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProviderWidget<T extends ChangeNotifier> extends StatefulWidget {
-  final Widget Function(BuildContext context, T value, Widget child) builder;
+  final Widget Function(BuildContext context, T value, Widget? child) builder;
 
   final T model;
 
@@ -11,9 +11,9 @@ class ProviderWidget<T extends ChangeNotifier> extends StatefulWidget {
   final bool autoDispose;
 
   ProviderWidget({
-    this.builder,
-    @required this.onModelReady,
-    @required this.model,
+    required this.builder,
+    required this.onModelReady,
+    required this.model,
     this.autoDispose: true,
   });
 

@@ -5,7 +5,7 @@ import 'package:screen_adaptation/screen_extension.dart';
 /// 基础 默认
 class SliverPage extends BasePage {
   static const routeName = '/sliver';
-  SliverPage({Key key}) : super(key: key);
+  SliverPage({Key? key}) : super(key: key);
 
   @override
   _SliverPageState createState() => _SliverPageState();
@@ -61,7 +61,7 @@ class _SliverPageState extends BasePageState<SliverPage> {
 
   Widget _buildItem(BuildContext context, String name) {
     return Container(
-      height: 100.dp,
+      height: 100.dp as double,
       child: Text(name),
     );
   }

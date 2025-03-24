@@ -6,19 +6,19 @@ import 'package:photo_view/photo_view.dart';
 class ImgHero extends StatelessWidget {
   final double width;
   final double height;
-  final BoxFit fit;
+  final BoxFit? fit;
   final String imgUrl;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final PhotoViewHeroAttributes heroAttributes;
 
   const ImgHero({
-    Key key,
-    @required this.imgUrl,
+    Key? key,
+    required this.imgUrl,
     this.onTap,
-    this.width,
-    this.height,
+    required this.width,
+    required this.height,
     this.fit,
-    this.heroAttributes,
+    required this.heroAttributes,
   }) : super(key: key);
 
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class ImgHero extends StatelessWidget {
 
 class PhotoHero extends StatelessWidget {
   PhotoHero({
-    Key key,
+    Key? key,
     this.imgUrl,
     this.onTap,
     this.minScale,
@@ -63,15 +63,15 @@ class PhotoHero extends StatelessWidget {
   final minScale;
   static const maxScale = 3.0;
   final guestureBack;
-  final String imgUrl;
-  final VoidCallback onTap;
-  final PhotoViewHeroAttributes heroAttributes;
+  final String? imgUrl;
+  final VoidCallback? onTap;
+  final PhotoViewHeroAttributes? heroAttributes;
 
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: CachedNetworkImage(
-        imageUrl: imgUrl,
+        imageUrl: imgUrl ?? '',
         imageBuilder: (context, imageProvider) => guestureBack
             ? _buildGuestureBackPhotoView(imageProvider)
             : _buildPhotoView(imageProvider),
@@ -99,18 +99,18 @@ class PhotoHero extends StatelessWidget {
 
 /// 图片展示页面
 class ImageViewer extends StatefulWidget {
-  final String imgUrl;
+  final String? imgUrl;
   final PhotoViewHeroAttributes heroAttributes;
   final double minScale;
 
   /// 是否支持手势返回(类似微信)
   final bool guestureBack;
   ImageViewer({
-    Key key,
+    Key? key,
     this.imgUrl,
     this.guestureBack = true,
     this.minScale = 0.2,
-    @required this.heroAttributes,
+    required this.heroAttributes,
   }) : super(key: key);
 
   @override
@@ -153,9 +153,7 @@ class _ImageViewerState extends State<ImageViewer> {
         });
         Logger.d(msg: 'dy:$dy dx:$dx');
       },
-      onVerticalDragEnd: (DragEndDetails dragEndDetails) {
-        
-      },
+      onVerticalDragEnd: (DragEndDetails dragEndDetails) {},
       child: Container(
         width: double.infinity,
         height: double.infinity,

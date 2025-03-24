@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 /// 加载本地图片
 /// SVG & PNG
-Widget localImg(String name, {double width, double height}) {
+Widget localImg(String name, {double? width, double? height}) {
   if (name != null && name.endsWith('svg')) {
     return SvgPicture.asset(
       name,

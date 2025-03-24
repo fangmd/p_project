@@ -6,20 +6,20 @@ typedef OnTabClick = void Function(int index);
 
 class Item {
   String title;
-  String imgDefaultLocalPath;
-  String imgSelectedLocalPath;
-  bool selected = true;
+  String? imgDefaultLocalPath;
+  String? imgSelectedLocalPath;
+  bool selected;
   bool unRead;
 
   Item(
-      {this.title,
+      {required this.title,
       this.imgDefaultLocalPath,
       this.imgSelectedLocalPath,
       this.unRead = false,
-      this.selected});
+      this.selected = true});
 
   String getImgLocalPath() {
-    return selected ? this.imgSelectedLocalPath : this.imgDefaultLocalPath;
+    return (selected ? this.imgSelectedLocalPath : this.imgDefaultLocalPath)!;
   }
 }
 
@@ -27,7 +27,8 @@ class BottomTab extends StatefulWidget {
   final OnTabClick onTabClick;
   final List<Item> items;
 
-  BottomTab({Key key, this.onTabClick, this.items}) : super(key: key);
+  BottomTab({Key? key, required this.onTabClick, required this.items})
+      : super(key: key);
 
   @override
   _BottomTabState createState() => _BottomTabState();

@@ -12,7 +12,7 @@ import 'msg/msg_page.dart';
 class MainPage extends BasePage {
   static const String routeName = '/main';
 
-  MainPage({Key key}) : super(key: key);
+  MainPage({Key? key}) : super(key: key);
 
   @override
   _MainPageState createState() => _MainPageState();
@@ -26,7 +26,7 @@ class MainPage extends BasePage {
 class _MainPageState extends BasePageState<MainPage>
     with SingleTickerProviderStateMixin {
   //, RouteAware
-  List<Item> _items;
+  late List<Item> _items;
   int _tabIndex = 0;
   List<Widget> _tagWidgets = [
     HomePage(),
@@ -34,7 +34,7 @@ class _MainPageState extends BasePageState<MainPage>
     MinePage(),
   ];
 
-  TabController _controller;
+  late TabController _controller;
   MainVM _mainVm = MainVM();
 
   @override
@@ -103,6 +103,7 @@ class _MainPageState extends BasePageState<MainPage>
   }
 
   void _onTapped(int value) {
+    if (_tabIndex == value) return;
     setState(() {
       _tabIndex = value;
     });

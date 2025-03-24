@@ -9,11 +9,11 @@ class AppLocalizationContainer extends StatefulWidget {
     return _AppLocalizationContainerState();
   }
 
-  AppLocalizationContainer({@required this.child});
+  AppLocalizationContainer({required this.child});
 
   static _AppLocalizationContainerState of(BuildContext context) {
     return context
-        .dependOnInheritedWidgetOfExactType<_AppLocalizationInheritedWidget>()
+        .dependOnInheritedWidgetOfExactType<_AppLocalizationInheritedWidget>()!
         .data;
   }
 }
@@ -55,9 +55,9 @@ class _AppLocalizationInheritedWidget extends InheritedWidget {
   final _AppLocalizationContainerState data;
 
   _AppLocalizationInheritedWidget({
-    Key key,
-    @required this.data,
-    @required Widget child,
+    Key? key,
+    required this.data,
+    required Widget child,
   }) : super(key: key, child: child);
 
   @override

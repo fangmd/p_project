@@ -5,10 +5,10 @@ import 'package:p_utils/p_utils.dart';
 
 /// 利用动画的 Tinker 计算 fps
 class FPSUtils {
-  int _lastCalcTime;
-  Ticker _ticker;
+  late int _lastCalcTime;
+  late Ticker _ticker;
   double _ticks = 0;
-  double _fps;
+  late double _fps;
 
   int get nowMs => DateTime.now().millisecondsSinceEpoch;
 

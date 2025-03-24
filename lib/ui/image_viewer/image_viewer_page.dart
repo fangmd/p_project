@@ -12,7 +12,7 @@ import '../../mock.dart';
 class ImageViewerPage extends BasePage {
   static const routeName = '/image_viewer';
 
-  ImageViewerPage({Key key}) : super(key: key);
+  ImageViewerPage({Key? key}) : super(key: key);
 
   @override
   _ImageViewerPageState createState() => _ImageViewerPageState();
@@ -55,8 +55,8 @@ class _ImageViewerPageState extends BasePageState<ImageViewerPage> {
                   )),
                 );
               },
-              width: 200.dp,
-              height: 400.dp,
+              width: 200.dp as double,
+              height: 400.dp as double,
               fit: BoxFit.contain,
             ),
             ImgHero(
@@ -78,8 +78,8 @@ class _ImageViewerPageState extends BasePageState<ImageViewerPage> {
                   )),
                 );
               },
-              width: 200.dp,
-              height: 400.dp,
+              width: 200.dp as double,
+              height: 400.dp as double,
               fit: BoxFit.contain,
             ),
             ImgHero(
@@ -101,8 +101,8 @@ class _ImageViewerPageState extends BasePageState<ImageViewerPage> {
                   )),
                 );
               },
-              width: 200.dp,
-              height: 400.dp,
+              width: 200.dp as double,
+              height: 400.dp as double,
               fit: BoxFit.contain,
             )
           ],

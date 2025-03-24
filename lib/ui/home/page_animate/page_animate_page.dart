@@ -8,7 +8,7 @@ import 'package:p_router/animate/scale_route.dart';
 class PageAnimatePage extends BasePage {
   static var routeName = '/page-animate';
 
-  PageAnimatePage({Key key}) : super(key: key);
+  PageAnimatePage({Key? key}) : super(key: key);
 
   @override
   _PageAnimatePageState createState() => _PageAnimatePageState();
@@ -27,13 +27,13 @@ class _PageAnimatePageState extends State<PageAnimatePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               RouterUtils.pushNamed(context, OnePageAnimatePage.routeName);
             },
             child: Text('One'),
           ),
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               RouterUtils.pushWithRoute(
                 context,
@@ -42,7 +42,7 @@ class _PageAnimatePageState extends State<PageAnimatePage> {
             },
             child: Text('使用 NoAnimationRoute 跳转'),
           ),
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               RouterUtils.pushWithRoute(
                 context,

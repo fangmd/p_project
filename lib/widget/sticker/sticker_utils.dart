@@ -9,7 +9,7 @@ class StickerUtils {
   }
 
   /// 创建图文 Widget
-  static Text createRichText(String text, {TextStyle style}) {
+  static Text createRichText(String text, {TextStyle? style}) {
     if (!containSticker(text)) return Text(text, style: style);
 
     List<InlineSpan> core = [];
@@ -49,7 +49,7 @@ class StickerUtils {
     );
   }
 
-  static Sticker getSticker(String stickerName) {
+  static Sticker? getSticker(String stickerName) {
     final indexIc = StickerData.emojis.indexOf(stickerName);
     if (indexIc != -1) {
       return Sticker(
@@ -64,8 +64,8 @@ class StickerUtils {
 
     final indexGif = StickerData.dm_gif_01_names.indexOf(stickerName);
     if (indexGif != -1) {
-      return Sticker(
-          StickerData.dm_gif_01_names[indexGif], StickerData.dmGifIcon[indexGif]);
+      return Sticker(StickerData.dm_gif_01_names[indexGif],
+          StickerData.dmGifIcon[indexGif]);
     }
     return null;
   }

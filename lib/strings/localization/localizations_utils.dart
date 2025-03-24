@@ -6,11 +6,11 @@ import '../string_base.dart';
 import 'app_localization_container.dart';
 import 'my_localizations.dart';
 
-StringBase i18n(BuildContext context) {
+StringBase? i18n(BuildContext context) {
   return MyLocalizations.of(context).currentLocalized;
 }
 
-StringBase i18n2() {
+StringBase? i18n2() {
   return MyLocalizations.localizedValues[LocalizationsUtils.currentLocale];
 }
 
@@ -68,7 +68,7 @@ class LocalizationsUtils {
   }
 
   /// 获取多语言字符串
-  static StringBase getLocaleString(BuildContext context) {
+  static StringBase? getLocaleString(BuildContext context) {
     return MyLocalizations.of(context).currentLocalized;
   }
 
@@ -79,7 +79,8 @@ class LocalizationsUtils {
       // use device language
       String deviceLocale = await DeviceInfoUtils.getLocalization();
       localLocale = convertDeviceLocaleToFlutterLocale(deviceLocale);
-      if (showLog) Logger.d(msg: "use device locale: $deviceLocale $localLocale");
+      if (showLog)
+        Logger.d(msg: "use device locale: $deviceLocale $localLocale");
     } else {
       if (showLog) Logger.d(msg: "use sp locale: $localLocale");
     }
@@ -87,12 +88,12 @@ class LocalizationsUtils {
   }
 
   /// 设置 APP 语言
-  static saveAppLocale(String locale) async {
+  static saveAppLocale(String? locale) async {
     SettingsDao().set(SP.LOCALIZATION, locale);
   }
 
   /// 切换语言
-  static switchLocale(BuildContext context, {String locale}) {
+  static switchLocale(BuildContext context, {String? locale}) {
     if (locale != null) {
       AppLocalizationContainer.of(context).setLocal(locale);
     } else {

@@ -5,7 +5,7 @@ import 'package:screen_adaptation/screen_extension.dart';
 class MinePage extends StatefulWidget {
   static var routeName = '/mine';
 
-  MinePage({Key key}) : super(key: key);
+  MinePage({Key? key}) : super(key: key);
 
   @override
   _MinePageState createState() => _MinePageState();
@@ -28,8 +28,8 @@ class _MinePageState extends State<MinePage>
           ),
           localImg(
             'assets/common/female.svg',
-            width: 40.dp,
-            height: 40.dp,
+            width: 40.dp as double,
+            height: 40.dp as double,
           ),
           Center(
             child: Text("Mine"),
@@ -38,8 +38,8 @@ class _MinePageState extends State<MinePage>
             padding: EdgeInsets.zero,
             icon: localImg(
               'assets/common/female.svg',
-              width: 40.dp,
-              height: 40.dp,
+              width: 40.dp as double,
+              height: 40.dp as double,
             ),
             onPressed: () {},
           ),

@@ -8,8 +8,8 @@ class FileService {
   static Future download(
     String url,
     String savePath, {
-    ProgressCallback onReceiveProgress,
-    CancelToken cancelToken,
+    ProgressCallback? onReceiveProgress,
+    CancelToken? cancelToken,
   }) async {
     final dio = await Http.instance.getDownloadDio();
     try {
@@ -21,7 +21,7 @@ class FileService {
         options: Options(
             responseType: ResponseType.bytes,
             followRedirects: false,
-            receiveTimeout: 0),
+            receiveTimeout: Duration.zero),
       );
       print(response.headers);
       File file = File(savePath);

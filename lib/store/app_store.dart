@@ -5,10 +5,10 @@ import 'model/user_model.dart';
 
 /// 全局数据
 class AppStore {
-  static BuildContext widgetCtx;
+  static late BuildContext widgetCtx;
 
   //  我们将会在main.dart中runAPP实例化init
-  static init({context, child, UserModel userModel}) {
+  static init({context, child, required UserModel userModel}) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: userModel),

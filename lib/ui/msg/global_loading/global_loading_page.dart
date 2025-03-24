@@ -4,7 +4,7 @@ import 'package:p_widget/p_widget.dart';
 
 class GlobalLoadingPage extends BasePage {
   static const routeName = '/global-loading';
-  GlobalLoadingPage({Key key}) : super(key: key);
+  GlobalLoadingPage({Key? key}) : super(key: key);
 
   @override
   _GlobalLoadingPageState createState() => _GlobalLoadingPageState();
@@ -23,7 +23,7 @@ class _GlobalLoadingPageState extends BasePageState<GlobalLoadingPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               print('show loading');
               GlobalLoading.showLoading(forceLoading: true);
@@ -38,7 +38,7 @@ class _GlobalLoadingPageState extends BasePageState<GlobalLoadingPage> {
             },
             child: Text('show'),
           ),
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               GlobalLoading.hideLoading();
             },

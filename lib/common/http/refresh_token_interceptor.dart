@@ -12,7 +12,8 @@ class RefreshTokenInterceptor extends InterceptorsWrapper {
   static bool refresh = true;
 
   @override
-  Future onResponse(Response response) async {
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
+    super.onResponse(response, handler);
     BaseResponse baseResponse = BaseResponse.fromJson(response.data);
     if (baseResponse.code == HttpCode.updateToken) {
       if (refresh) {
@@ -30,8 +31,6 @@ class RefreshTokenInterceptor extends InterceptorsWrapper {
     } else if (baseResponse.code == HttpCode.tokenError) {
       // token 失效
       _loginOut();
-    } else {
-      return response;
     }
   }
 
@@ -43,8 +42,8 @@ class RefreshTokenInterceptor extends InterceptorsWrapper {
 
 class ErrorToastInterceptor extends InterceptorsWrapper {
   @override
-  Future onError(DioError err) {
-    ToastUtils.show(i18n2().netError);
-    return super.onError(err);
+  void onError(DioError err, ErrorInterceptorHandler handler) {
+    ToastUtils.show(i18n2()!.netError);
+    super.onError(err, handler);
   }
 }

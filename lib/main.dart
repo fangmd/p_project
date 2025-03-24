@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:p_project/enums/user.dart';
 import 'package:p_project/router/router.dart';
 import 'package:p_project/router/router_config.dart';
 import 'package:p_project/store/app_store.dart';
@@ -17,7 +16,7 @@ import 'common/http/http.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'strings/localization/my_localizations_delegate.dart';
 
-void main() {
+void main() async {
   // FirebaseUtils.init();
   // runZoned(() {
   //   runApp(AppLocalizationContainer(
@@ -27,9 +26,7 @@ void main() {
   // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
 
   WidgetsFlutterBinding.ensureInitialized();
-  HiveUtils.init();
-
-  final a = UserRoleExtension.fromInt(1);
+  await HiveUtils.init();
 
   runApp(AppLocalizationContainer(
     child: MyApp(),
@@ -77,18 +74,17 @@ class _MyAppState extends State<MyApp> {
         ],
         supportedLocales: LocalizationsUtils.getSupportLocale(),
         locale: Locale(locale),
-        localeResolutionCallback:
-            (Locale locale, Iterable<Locale> supportedLocales) {
-          LocalizationsUtils.getAppLocale().then((value) {
-            // Logger.d(msg: "LocalizationsUtils $value");
-            Http.instance.changeHeader(
-                'Lang', converToHeaderLocale(LocalizationsUtils.currentLocale));
-          });
-          return locale;
+        localeListResolutionCallback: (locales, supportedLocales) {
+          // LocalizationsUtils.getAppLocale().then((value) {
+          //   // Logger.d(msg: "LocalizationsUtils $value");
+          //   Http.instance.changeHeader(
+          //       'Lang', converToHeaderLocale(LocalizationsUtils.currentLocale));
+          // });
+          // return locale;
         },
         home: Builder(
           builder: (context) {
-            MScreenUtils.init(context);
+            // MScreenUtils.init(context);
             AppStore.widgetCtx = context;
             return SplashPage();
           },

@@ -6,21 +6,21 @@ import 'package:screen_adaptation/screen_utils.dart';
 /// SafeArea
 class TopNav extends StatelessWidget {
   final String title;
-  final String rightImg;
-  final VoidCallback rightClick;
+  final String? rightImg;
+  final VoidCallback? rightClick;
   final bool showBackIc;
   final Color color;
-  final Widget rightWidget;
+  final Widget? rightWidget;
   Widget backImg;
 
   TopNav({
     this.showBackIc = true,
-    this.backImg,
-    this.title,
+    required this.backImg,
+    required this.title,
     this.rightImg,
     this.rightClick,
     this.rightWidget,
-    this.color,
+    required this.color,
   });
 
   @override
@@ -95,7 +95,7 @@ class TopNav extends StatelessWidget {
           width: px2dp(80),
           child: Center(
             child: Image.asset(
-              rightImg,
+              rightImg!,
               width: px2dp(40),
               height: px2dp(40),
             ),

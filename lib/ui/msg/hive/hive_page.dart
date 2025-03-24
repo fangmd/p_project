@@ -4,7 +4,7 @@ import 'package:p_project/service/db/settings_dao.dart';
 
 class HivePage extends BasePage {
   static const routeName = '/hive';
-  HivePage({Key key}) : super(key: key);
+  HivePage({Key? key}) : super(key: key);
 
   @override
   _HivePageState createState() => _HivePageState();
@@ -24,13 +24,13 @@ class _HivePageState extends BasePageState<HivePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          FlatButton(
+          ElevatedButton(
             onPressed: () {
               SettingsDao().set('name', cnt);
             },
             child: Text('Save Name $cnt'),
           ),
-          FlatButton(
+          ElevatedButton(
             onPressed: () {
               int c = SettingsDao().get('name') as int;
               setState(() {

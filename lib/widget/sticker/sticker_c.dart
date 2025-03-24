@@ -15,7 +15,7 @@ class StickerC {
   static final String dm_e_12 = "[咒骂]";
   static final String dm_e_13 = "[调皮]";
   static final String dm_e_14 = "[呲牙]";
-  
+
   static final String dm_e_15 = "[不情愿]";
   static final String dm_e_16 = "[害羞]";
   static final String dm_e_17 = "[爆发]";
@@ -201,7 +201,7 @@ class Sticker {
   final String zhName;
 
   /// sticker type
-  StickerType type;
+  late StickerType type;
 
   /// img path
   final String img;

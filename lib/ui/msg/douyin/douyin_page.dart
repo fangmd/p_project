@@ -3,7 +3,7 @@ import 'package:p_project/common/base/base_page.dart';
 
 class DouYinPage extends BasePage {
   static const routeName = 'douyin';
-  DouYinPage({Key key}) : super(key: key);
+  DouYinPage({Key? key}) : super(key: key);
 
   @override
   _DouYinPageState createState() => _DouYinPageState();
@@ -20,9 +20,9 @@ class _DouYinPageState extends BasePageState<DouYinPage> {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: NotificationListener<ScrollNotification>(
-        onNotification: (value) {
-          // value.metrics.
-        },
+        // onNotification: (value) {
+        //   // value.metrics.
+        // },
         child: ListView(
           padding: const EdgeInsets.all(0),
           children: <Widget>[

@@ -6,13 +6,13 @@ class RouterUtils {
 
   /// 不需要 context 直接跳转
   static void pushNamedWithoutContext(String name) {
-    navigatorKey.currentState.pushNamed(name);
+    navigatorKey.currentState!.pushNamed(name);
   }
 
   static Future pushNamed(
     BuildContext context,
     String routeName, {
-    Object arguments,
+    Object? arguments,
   }) {
     return Navigator.pushNamed(context, routeName, arguments: arguments);
   }
@@ -34,9 +34,9 @@ class RouterUtils {
     Navigator.pop(context);
   }
 
-  static void pop2({BuildContext context}) {
+  static void pop2({BuildContext? context}) {
     if (context == null) {
-      navigatorKey.currentState.pop();
+      navigatorKey.currentState!.pop();
     } else {
       Navigator.pop(context);
     }
@@ -49,7 +49,7 @@ class RouterUtils {
 
   /// 启动一个新的页面，并清理所有历史栈
   static void pushNamedAndRemoveAll2(String newRouteName) {
-    navigatorKey.currentState.pushNamedAndRemoveUntil(
+    navigatorKey.currentState!.pushNamedAndRemoveUntil(
       newRouteName,
       (_) => false,
     );

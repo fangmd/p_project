@@ -7,7 +7,7 @@ import '../main_page.dart';
 class SplashPage extends BasePage {
   static const routeName = '/splash';
 
-  SplashPage({Key key}) : super(key: key);
+  SplashPage({Key? key}) : super(key: key);
 
   @override
   _SplashPageState createState() => _SplashPageState();
@@ -19,8 +19,6 @@ class SplashPage extends BasePage {
 }
 
 class _SplashPageState extends BasePageState<SplashPage> {
-  String _img;
-
   @override
   void initState() {
     super.initState();

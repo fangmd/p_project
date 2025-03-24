@@ -5,7 +5,7 @@ import 'package:p_project/ui/plugin/params/params_plugin.dart';
 class ParamsPluginPage extends StatefulWidget {
   static var routeName = '/plugin-demo/params';
 
-  ParamsPluginPage({Key key}) : super(key: key);
+  ParamsPluginPage({Key? key}) : super(key: key);
 
   @override
   _ParamsPageState createState() => _ParamsPageState();
@@ -22,7 +22,7 @@ class _ParamsPageState extends State<ParamsPluginPage> {
           child: Column(
             children: <Widget>[
               Text('Data From Native: $strFromNative'),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   ParamsPlugin.dealData("Hello Native", 1000).then((value) {
                     int a = value["ret_int"];

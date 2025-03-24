@@ -9,8 +9,8 @@ class BottomTabItem extends StatefulWidget {
   final Item item;
   final bool showUnRead;
   BottomTabItem({
-    Key key,
-    this.item,
+    Key? key,
+    required this.item,
     this.showUnRead = false,
   }) : super(key: key);
 
@@ -22,7 +22,7 @@ class _BottomTabItemState extends State<BottomTabItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100.dp,
+      height: 100.dp as double,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -30,8 +30,8 @@ class _BottomTabItemState extends State<BottomTabItem> {
             children: <Widget>[
               Image.asset(
                 widget.item.getImgLocalPath(),
-                width: 44.dp,
-                height: 44.dp,
+                width: 44.dp as double,
+                height: 44.dp as double,
                 fit: BoxFit.contain,
               ),
               Visibility(
@@ -40,8 +40,8 @@ class _BottomTabItemState extends State<BottomTabItem> {
                   top: 0,
                   right: 0,
                   child: circleWidget(
-                    width: 20.dp,
-                    height: 20.dp,
+                    width: 20.dp as double,
+                    height: 20.dp as double,
                     color: red1,
                   ),
                 ),

@@ -6,7 +6,7 @@ import 'package:p_project/widget/sticker/sticker_utils.dart';
 
 class StickerPage extends BasePage {
   static const routeName = '/sticker';
-  StickerPage({Key key}) : super(key: key);
+  StickerPage({Key? key}) : super(key: key);
 
   @override
   _StickerPageState createState() => _StickerPageState();
@@ -18,7 +18,7 @@ class StickerPage extends BasePage {
 }
 
 class _StickerPageState extends State<StickerPage> {
-  List<Sticker> emojisData;
+  late List<Sticker> emojisData;
   TextEditingController _textC = TextEditingController();
 
   String showContent = '';
@@ -54,7 +54,7 @@ class _StickerPageState extends State<StickerPage> {
                 if (index == 0) {
                   return Row(
                     children: <Widget>[
-                      FlatButton(
+                      ElevatedButton(
                         onPressed: () {
                           if (_textC.text.isEmpty) return;
                           if (_textC.text.endsWith(']')) {
@@ -68,7 +68,7 @@ class _StickerPageState extends State<StickerPage> {
                         },
                         child: Text('Delete'),
                       ),
-                      FlatButton(
+                      ElevatedButton(
                         onPressed: () {
                           setState(() {
                             showContent = _textC.text;

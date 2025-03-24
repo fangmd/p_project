@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'navigator_manager.dart';
 
 abstract class BasePage extends StatefulWidget {
-  BasePage({Key key}) : super(key: key);
+  BasePage({Key? key}) : super(key: key);
 
   String getPageName();
 }

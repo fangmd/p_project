@@ -10,7 +10,7 @@ import 'package:p_project/widget/animate/fade_out_animation.dart';
 //class OnePageAnimatePage extends BasePage {
 //  static var routeName = '/page-animate/one';
 //
-//  OnePageAnimatePage({Key key}) : super(key: key);
+//  OnePageAnimatePage({Key? key}) : super(key: key);
 //
 //  @override
 //  _OnePageAnimatePageState createState() => _OnePageAnimatePageState();
@@ -54,7 +54,7 @@ import 'package:p_project/widget/animate/fade_out_animation.dart';
 //                ),
 //              ),
 //              SizedBox(height: 100),
-//              RaisedButton(
+//              ElevatedButton(
 //                onPressed: () {
 //                  setState(() {
 //                    cnt++;
@@ -74,7 +74,7 @@ import 'package:p_project/widget/animate/fade_out_animation.dart';
 //class OnePageAnimatePage extends BasePage {
 //  static var routeName = '/page-animate/one';
 //
-//  OnePageAnimatePage({Key key}) : super(key: key);
+//  OnePageAnimatePage({Key? key}) : super(key: key);
 //
 //  @override
 //  _OnePageAnimatePageState createState() => _OnePageAnimatePageState();
@@ -115,7 +115,7 @@ import 'package:p_project/widget/animate/fade_out_animation.dart';
 //              ),
 //            ),
 //            SizedBox(height: 100),
-//            RaisedButton(
+//            ElevatedButton(
 //              onPressed: () {
 //                setState(() {
 //                  delayTwo = delayTwo + 0.1;
@@ -133,7 +133,7 @@ import 'package:p_project/widget/animate/fade_out_animation.dart';
 class MController {
   List<VoidCallback> _s = [];
 
-  void addStartAnimation(Function startAnimation) {
+  void addStartAnimation(VoidCallback startAnimation) {
     _s.add(startAnimation);
   }
 
@@ -152,7 +152,7 @@ class MController {
 class OnePageAnimatePage extends BasePage {
   static var routeName = '/page-animate/one';
 
-  OnePageAnimatePage({Key key}) : super(key: key);
+  OnePageAnimatePage({Key? key}) : super(key: key);
 
   @override
   _OnePageAnimatePageState createState() => _OnePageAnimatePageState();

@@ -394,9 +394,9 @@ class StickerData {
     'assets/sticker/dm_gif_01_40.gif',
   ];
 
-  static List<Sticker> emojisData;
-  static List<Sticker> face01IconsData;
-  static List<Sticker> dmGifData;
+  static late List<Sticker> emojisData;
+  static late List<Sticker> face01IconsData;
+  static late List<Sticker> dmGifData;
 
   static List<Sticker> getEmojisData() {
     if (emojisData != null) return emojisData;

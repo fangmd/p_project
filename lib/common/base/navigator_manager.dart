@@ -4,7 +4,7 @@ import 'base_page.dart';
 
 ///这个管理类，只是标记 当前 按照顺序放入和移除栈名称，并不是页面跳转后退 的功能， 只是方便 推算、表示生命周期方法
 class NavigatorManger {
-  List<BasePageState> _activityStack = new List<BasePageState>();
+  List<BasePageState> _activityStack = <BasePageState>[];
 
   NavigatorManger._internal();
 
@@ -16,21 +16,31 @@ class NavigatorManger {
     _activityStack.add(widgetName);
 
     // sec endPage
-    AnalyticsUtils.endPage(getSecondTop()?.widget?.getPageName());
+    final secPage = getSecondTop();
+    if (secPage != null) {
+      AnalyticsUtils.endPage(secPage.widget.getPageName());
+    }
+
     // first beginPage
-    AnalyticsUtils.beginPage(getTop()?.widget?.getPageName());
+    final topPage = getTop();
+    if (topPage != null) {
+      AnalyticsUtils.beginPage(topPage.widget.getPageName());
+    }
   }
 
   void removeWidget(BasePageState widgetName) {
     // first endPage
-    AnalyticsUtils.endPage(widgetName?.widget?.getPageName());
+    AnalyticsUtils.endPage(widgetName.widget.getPageName());
     // sec beginPage
-    AnalyticsUtils.beginPage(getSecondTop()?.widget?.getPageName());
+    final topPage = getSecondTop();
+    if (topPage != null) {
+      AnalyticsUtils.beginPage(topPage.widget.getPageName());
+    }
 
     _activityStack.remove(widgetName);
   }
 
-  BasePageState getSecondTop() {
+  BasePageState? getSecondTop() {
     if (_activityStack == null) return null;
     try {
       return _activityStack[_activityStack.length - 2];
@@ -39,7 +49,7 @@ class NavigatorManger {
     }
   }
 
-  BasePageState getTop() {
+  BasePageState? getTop() {
     if (_activityStack == null) return null;
     try {
       return _activityStack[_activityStack.length - 1];

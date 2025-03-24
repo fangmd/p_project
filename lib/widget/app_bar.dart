@@ -4,7 +4,7 @@ import 'package:p_project/styles/text.dart';
 import 'package:p_project/widget/img/img.dart';
 import 'package:screen_adaptation/screen_extension.dart';
 
-AppBar getAppBar(String title, {BuildContext context}) {
+AppBar getAppBar(String title, {required BuildContext context}) {
   return AppBar(
     centerTitle: true,
     backgroundColor: MColor.transparent,
@@ -15,8 +15,8 @@ AppBar getAppBar(String title, {BuildContext context}) {
       },
       icon: localImg(
         'assets/common/toolbar_back.svg',
-        width: 18.dp,
-        height: 34.dp,
+        width: 18.dp as double,
+        height: 34.dp as double,
       ),
     ),
     title: Text(title, style: AppTheme.black34Bold),

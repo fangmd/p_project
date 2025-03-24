@@ -3,7 +3,7 @@ import 'package:p_project/common/base/base_page.dart';
 
 class ApkInstallPgae extends BasePage {
   static final routeName = '/home/apk-install';
-  ApkInstallPgae({Key key}) : super(key: key);
+  ApkInstallPgae({Key? key}) : super(key: key);
 
   @override
   _ApkInstallPgaeState createState() => _ApkInstallPgaeState();
@@ -22,7 +22,7 @@ class _ApkInstallPgaeState extends State<ApkInstallPgae> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               // PInstall.install(
               //   filePath: "/storage/emulated/0/Download/1583136910686.apk",

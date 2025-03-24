@@ -11,7 +11,7 @@ import 'hive/hive_page.dart';
 class MsgPage extends StatefulWidget {
   static var routeName = '/msg';
 
-  MsgPage({Key key}) : super(key: key);
+  MsgPage({Key? key}) : super(key: key);
 
   @override
   _MsgPageState createState() => _MsgPageState();
@@ -22,7 +22,7 @@ class _MsgPageState extends State<MsgPage>
   @override
   bool get wantKeepAlive => true;
 
-  List<String> _rights;
+  late List<String> _rights;
 
   @override
   void initState() {
@@ -46,29 +46,29 @@ class _MsgPageState extends State<MsgPage>
       body: SafeArea(
           child: Column(
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () =>
                 RouterUtils.pushNamed(context, GuesturePage.routeName),
             child: Text('手势触摸Demo'),
           ),
           _buildWhellBtn(),
-          RaisedButton(
+          ElevatedButton(
             onPressed: () =>
                 RouterUtils.pushNamed(context, DouYinPage.routeName),
             child: Text('抖音首页UI'),
           ),
-          RaisedButton(
+          ElevatedButton(
             onPressed: () =>
                 RouterUtils.pushNamed(context, GlobalLoadingPage.routeName),
             child: Text('全局 Loading 弹框'),
           ),
-          FlatButton(
+          ElevatedButton(
             onPressed: () {
               RouterUtils.pushNamed(context, SliverPage.routeName);
             },
             child: Text('Sliver'),
           ),
-          FlatButton(
+          ElevatedButton(
             onPressed: () {
               RouterUtils.pushNamed(context, HivePage.routeName);
             },
@@ -80,7 +80,7 @@ class _MsgPageState extends State<MsgPage>
   }
 
   Widget _buildWhellBtn() {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () {
         showModalBottomSheet(
           context: context,

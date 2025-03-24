@@ -26,7 +26,7 @@ class AnalyticsUtils {
     PUmeng.onPageEnd(pageName);
   }
 
-  static event(String name, {String label}) {
+  static event(String name, {String? label}) {
     if (name == null) return;
     Logger.d(tag: Tag.Analytics, msg: 'event $name');
     PUmeng.onEvent(name, label: label);

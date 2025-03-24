@@ -27,7 +27,7 @@ abstract class HiveDao<T> {
     return getBox().add(data);
   }
 
-  String getString(String key) {
+  String? getString(String key) {
     if (getBox().get(key) is String) {
       return getBox().get(key) as String;
     }
@@ -38,14 +38,14 @@ abstract class HiveDao<T> {
     getBox().delete(key);
   }
 
-  int getInt(String key) {
+  int? getInt(String key) {
     if (getBox().get(key) is int) {
       return getBox().get(key) as int;
     }
     return null;
   }
 
-  double getDouble(String key) {
+  double? getDouble(String key) {
     if (getBox().get(key) is double) {
       return getBox().get(key) as double;
     }

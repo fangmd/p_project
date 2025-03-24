@@ -12,7 +12,7 @@ import 'list/list_refresh_page.dart';
 class HomePage extends StatefulWidget {
   static var routeName = '/home';
 
-  HomePage({Key key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -29,43 +29,43 @@ class _HomePageState extends State<HomePage>
         child: Center(
           child: Column(
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   RouterUtils.pushNamed(context, ImageViewerPage.routeName);
                 },
                 child: Text('图片游览'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   RouterUtils.pushNamed(context, PluginPage.routeName);
                 },
                 child: Text('插件Demo'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   RouterUtils.pushNamed(context, PageAnimatePage.routeName);
                 },
                 child: Text('页面跳转动画'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   RouterUtils.pushNamed(context, ApkInstallPgae.routeName);
                 },
                 child: Text('Android apk 下载及安装'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   RouterUtils.pushNamed(context, NetPage.routeName);
                 },
                 child: Text('网络库'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   RouterUtils.pushNamed(context, ListRefreshPage.routeName);
                 },
                 child: Text('下拉刷新'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   RouterUtils.pushNamed(context, StickerPage.routeName);
                 },
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage>
               ),
               TextField(),
               TextWidget(name: '$cnt'),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   setState(() {
                     cnt++;

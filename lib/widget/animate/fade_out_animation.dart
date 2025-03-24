@@ -24,10 +24,10 @@ class FadeOutAnimationNoThird extends StatefulWidget {
   final MController controller;
 
   FadeOutAnimationNoThird({
-    Key key,
+    Key? key,
     this.delay = 1.0,
-    this.child,
-    @required this.controller,
+    required this.child,
+    required this.controller,
   }) : super(key: key);
 
   @override
@@ -37,9 +37,9 @@ class FadeOutAnimationNoThird extends StatefulWidget {
 
 class _FadeOutAnimationNoThirdState extends State<FadeOutAnimationNoThird>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation opacityAnimation;
-  Animation<Offset> translateYAnimation;
+  late AnimationController _controller;
+  late Animation<double> opacityAnimation;
+  late Animation<Offset> translateYAnimation;
   Duration delay = Duration.zero;
   bool _waitForDelay = true;
   bool _isDisposed = false;

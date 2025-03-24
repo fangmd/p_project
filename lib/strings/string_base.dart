@@ -1,11 +1,11 @@
 abstract class StringBase {
-  String home;
-  String msg;
-  String mine;
+  late String home;
+  late String msg;
+  late String mine;
 
-  String errorService;
-  String errorUnKnow;
-  String netError;
+  late String errorService;
+  late String errorUnKnow;
+  late String netError;
 
-  String confirm;
+  late String confirm;
 }

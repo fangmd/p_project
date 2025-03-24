@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TextWidget extends StatefulWidget {
   final String name;
-  TextWidget({Key key, this.name}) : super(key: key);
+  TextWidget({Key? key, required this.name}) : super(key: key);
 
   @override
   _TextWidgetState createState() => _TextWidgetState();
@@ -62,7 +62,7 @@ class _TextWidgetState extends State<TextWidget> {
 }
 
 class NameText extends StatelessWidget {
-  const NameText({Key key}) : super(key: key);
+  const NameText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -39,7 +39,7 @@ class _CropImageRouteState extends State<CropImageRoute> {
           Column(
             children: <Widget>[
               Container(
-                height: ScreenUtil.screenHeight * 0.3,
+                height: ScreenUtil().scaleHeight * 0.3,
                 child: Crop.file(
                   widget.image,
                   key: cropKey,
@@ -48,7 +48,7 @@ class _CropImageRouteState extends State<CropImageRoute> {
                 ),
               ),
               SizedBox(height: 20),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   try {
                     setState(() {
@@ -60,7 +60,7 @@ class _CropImageRouteState extends State<CropImageRoute> {
                     Navigator.pop(context, null);
                   }
                 },
-                child: Text(i18n(context).confirm),
+                child: Text(i18n(context)!.confirm),
               ),
             ],
           ),
@@ -97,7 +97,7 @@ class _CropImageRouteState extends State<CropImageRoute> {
 
   Future<void> _crop(File originalFile) async {
     final crop = cropKey.currentState;
-    final area = crop.area;
+    final area = crop?.area;
     if (area == null) {
       //裁剪结果为空
       Logger.d(tag: Tag.CROP, msg: 'fail, area == null');
@@ -107,7 +107,7 @@ class _CropImageRouteState extends State<CropImageRoute> {
     if (permission) {
       File cropedImg = await ImageCrop.cropImage(
         file: originalFile,
-        area: crop.area,
+        area: crop?.area,
       );
       final filePath =
           await ImageCompress.compressImg(cropedImg, loading: false);

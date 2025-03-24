@@ -10,7 +10,7 @@ import 'package:screen_adaptation/screen_extension.dart';
 class GuesturePage extends BasePage {
   static const routeName = '/learn/guesture';
 
-  GuesturePage({Key key}) : super(key: key);
+  GuesturePage({Key? key}) : super(key: key);
 
   @override
   _GuesturePageState createState() => _GuesturePageState();
@@ -71,14 +71,14 @@ class _GuesturePageState extends BasePageState<GuesturePage> {
         });
       },
       child: Container(
-        width: 200.dp,
-        height: 200.dp,
+        width: 200.dp as double,
+        height: 200.dp as double,
         color: grey_666,
         alignment: Alignment.center,
         child: Transform(
           child: reactangleWidget(
-            width: 100.dp,
-            height: 100.dp,
+            width: 100.dp as double,
+            height: 100.dp as double,
             color: red1,
           ),
           transform: matrix,
@@ -112,14 +112,14 @@ class _GuesturePageState extends BasePageState<GuesturePage> {
         });
       },
       child: Container(
-        width: 200.dp,
-        height: 200.dp,
+        width: 200.dp as double,
+        height: 200.dp as double,
         color: grey_666,
         alignment: Alignment.center,
         child: Transform(
           child: reactangleWidget(
-            width: 100.dp,
-            height: 100.dp,
+            width: 100.dp as double,
+            height: 100.dp as double,
             color: red1,
           ),
           transform: matrix,

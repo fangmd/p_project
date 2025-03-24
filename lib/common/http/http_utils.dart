@@ -22,10 +22,10 @@ class HttpCode {
     String ret;
     switch (code) {
       case serviceError:
-        ret = i18n2().errorService;
+        ret = i18n2()!.errorService;
         break;
       default:
-        ret = i18n2().errorUnKnow;
+        ret = i18n2()!.errorUnKnow;
         break;
     }
     return ret;

@@ -6,7 +6,7 @@ import 'package:p_project/service/net/file_service.dart';
 
 class NetPage extends BasePage {
   static const routeName = '/net';
-  NetPage({Key key}) : super(key: key);
+  NetPage({Key? key}) : super(key: key);
 
   @override
   _NetPageState createState() => _NetPageState();
@@ -26,7 +26,7 @@ class _NetPageState extends BasePageState<NetPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               FileManager.getCachePath().then((path) {
                 FileService.download(

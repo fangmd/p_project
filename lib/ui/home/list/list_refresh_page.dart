@@ -5,7 +5,7 @@ import 'package:screen_adaptation/screen_extension.dart';
 
 class ListRefreshPage extends BasePage {
   static const routeName = '/list-refresh-page';
-  ListRefreshPage({Key key}) : super(key: key);
+  ListRefreshPage({Key? key}) : super(key: key);
 
   @override
   _ListRefreshPageState createState() => _ListRefreshPageState();
@@ -40,7 +40,7 @@ class _ListRefreshPageState extends State<ListRefreshPage> {
 
   Widget _buildItem(BuildContext context, int index) {
     return Container(
-      height: 80.dp,
+      height: 80.dp as double,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[

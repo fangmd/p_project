@@ -12,7 +12,7 @@ Widget clickWidget({@required child, @required onTap}) {
 }
 
 /// 有点击效果 点击控件
-Widget aClickWidget({@required child, @required onTap, Color color}) {
+Widget aClickWidget({@required child, @required onTap, Color? color}) {
   return Material(
     color: color,
     child: InkWell(
@@ -66,11 +66,11 @@ Widget verticalDivide({
 
 /// 圆角图片
 Widget roundImgWidget({
-  double height,
-  double width,
-  double radius,
+  double? height,
+  double? width,
+  required double radius,
   BoxFit fit = BoxFit.fill,
-  ImageProvider imageProvider,
+  required ImageProvider imageProvider,
 }) {
   return Container(
     width: width,
@@ -83,7 +83,7 @@ Widget roundImgWidget({
 }
 
 /// 有bug
-Widget clipRRectWidget({double radius, Widget child}) {
+Widget clipRRectWidget({required double radius, required Widget child}) {
   return ClipRRect(
     borderRadius: BorderRadius.circular(px2dp(radius)),
     child: child,
@@ -100,7 +100,7 @@ Widget pad({
   double left = 0,
   double right: 0,
   double bottom = 0,
-  @required Widget child,
+  required Widget child,
 }) {
   return Padding(
     padding: EdgeInsets.only(
@@ -144,7 +144,8 @@ Widget borderEditText({hint, hintStyle}) {
 }
 
 /// 矩形 色块
-Widget reactangleWidget({double width, double height, Color color}) {
+Widget reactangleWidget(
+    {required double width, required double height, required Color color}) {
   return Container(
     height: height,
     width: width,
@@ -153,7 +154,8 @@ Widget reactangleWidget({double width, double height, Color color}) {
 }
 
 /// 圆形 色块
-Widget circleWidget({double width, double height, Color color}) {
+Widget circleWidget(
+    {required double width, required double height, required Color color}) {
   return Container(
     height: height,
     width: width,
@@ -167,12 +169,12 @@ Widget circleWidget({double width, double height, Color color}) {
 /// 创建可以点击的本地图标
 /// 图片居中
 InkWell clickImg({
-  VoidCallback click,
+  required VoidCallback click,
   double boxheight = 0.0,
   double boxWidth = 0.0,
   double imgheight = 0.0,
   double imgWidth = 0.0,
-  String assetImg,
+  required String assetImg,
 }) {
   return InkWell(
     onTap: click,

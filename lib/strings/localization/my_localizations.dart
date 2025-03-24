@@ -16,7 +16,7 @@ class MyLocalizations {
     LocalizationsUtils.ZH: StringZh(),
   };
 
-  StringBase get currentLocalized {
+  StringBase? get currentLocalized {
     return localizedValues[locale.languageCode];
   }
 
